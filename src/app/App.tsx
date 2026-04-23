@@ -10,10 +10,10 @@ import {
   Lightbulb,
   Mail,
   Phone,
-  MapPin,
   Menu,
   X
 } from 'lucide-react';
+import { projectId, publicAnonKey } from '/utils/supabase/info';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,12 +24,50 @@ export default function App() {
     interest: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will contact you soon.');
-    setFormData({ name: '', email: '', phone: '', interest: '', message: '' });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch(
+        `https://${projectId}.supabase.co/functions/v1/make-server-e72b99af/contact`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${publicAnonKey}`,
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your interest! We have received your application and will contact you soon.'
+        });
+        setFormData({ name: '', email: '', phone: '', interest: '', message: '' });
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.error || 'Failed to submit form. Please try again.'
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Failed to submit form. Please check your connection and try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToSection = (id: string) => {
@@ -526,46 +564,61 @@ export default function App() {
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
               <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Application Form</h3>
-              <form onSubmit={handleSubmit} className="space-y-4">
+
+              {submitStatus && (
+                <div className={`mb-4 sm:mb-6 p-4 rounded-lg ${
+                  submitStatus.type === 'success'
+                    ? 'bg-green-50 border border-green-200 text-green-800'
+                    : 'bg-red-50 border border-red-200 text-red-800'
+                }`}>
+                  <p className="text-sm">{submitStatus.message}</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                 <div>
-                  <label className="block mb-2 text-sm">Full Name *</label>
+                  <label className="block mb-2 text-sm font-medium">Full Name *</label>
                   <input
                     type="text"
                     required
+                    disabled={isSubmitting}
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
                     placeholder="Your name"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm">Email Address *</label>
+                  <label className="block mb-2 text-sm font-medium">Email Address *</label>
                   <input
                     type="email"
                     required
+                    disabled={isSubmitting}
                     value={formData.email}
                     onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm">Phone Number</label>
+                  <label className="block mb-2 text-sm font-medium">Phone Number</label>
                   <input
                     type="tel"
+                    disabled={isSubmitting}
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
                     placeholder="+27 XX XXX XXXX"
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm">I'm interested in *</label>
+                  <label className="block mb-2 text-sm font-medium">I'm interested in *</label>
                   <select
                     required
+                    disabled={isSubmitting}
                     value={formData.interest}
                     onChange={(e) => setFormData({...formData, interest: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation bg-white"
+                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation bg-white disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
                   >
                     <option value="">Select an option</option>
                     <option value="student">Joining as a Student</option>
@@ -577,20 +630,22 @@ export default function App() {
                   </select>
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm">Message</label>
+                  <label className="block mb-2 text-sm font-medium">Message</label>
                   <textarea
+                    disabled={isSubmitting}
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation resize-y"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation resize-y disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
                     placeholder="Tell us more about your interest..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation"
+                  disabled={isSubmitting}
+                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation disabled:bg-gray-300 disabled:cursor-not-allowed disabled:transform-none"
                 >
-                  Submit Application
+                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
                 </button>
               </form>
             </div>
@@ -606,7 +661,9 @@ export default function App() {
                     </div>
                     <div>
                       <p className="font-medium mb-1">Email</p>
-                      <p className="text-gray-600 text-sm">info@lesedinovatech.org</p>
+                      <a href="mailto:siyayales@gmail.com" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
+                        siyayales@gmail.com
+                      </a>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -615,16 +672,9 @@ export default function App() {
                     </div>
                     <div>
                       <p className="font-medium mb-1">Phone</p>
-                      <p className="text-gray-600 text-sm">+27 XX XXX XXXX</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-[#ffc8dd] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-gray-900" />
-                    </div>
-                    <div>
-                      <p className="font-medium mb-1">Location</p>
-                      <p className="text-gray-600 text-sm">Serving rural communities across South Africa</p>
+                      <a href="tel:+27730849287" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
+                        073 084 9287
+                      </a>
                     </div>
                   </div>
                 </div>
