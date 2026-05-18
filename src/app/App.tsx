@@ -92,6 +92,7 @@ export default function App() {
               <button onClick={() => scrollToSection('home')} className="hover:text-[#ffc8dd] transition-colors">Home</button>
               <button onClick={() => scrollToSection('about')} className="hover:text-[#ffc8dd] transition-colors">About</button>
               <button onClick={() => scrollToSection('programs')} className="hover:text-[#ffc8dd] transition-colors">Programs</button>
+              <button onClick={() => scrollToSection('services')} className="hover:text-[#ffc8dd] transition-colors">Services</button>
               <button onClick={() => scrollToSection('impact')} className="hover:text-[#ffc8dd] transition-colors">Impact</button>
               <button onClick={() => scrollToSection('get-involved')} className="hover:text-[#ffc8dd] transition-colors">Get Involved</button>
               <button onClick={() => scrollToSection('contact')} className="hover:text-[#ffc8dd] transition-colors">Contact</button>
@@ -113,6 +114,7 @@ export default function App() {
               <button onClick={() => scrollToSection('home')} className="block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation">Home</button>
               <button onClick={() => scrollToSection('about')} className="block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation">About</button>
               <button onClick={() => scrollToSection('programs')} className="block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation">Programs</button>
+              <button onClick={() => scrollToSection('services')} className="block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation">Services</button>
               <button onClick={() => scrollToSection('impact')} className="block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation">Impact</button>
               <button onClick={() => scrollToSection('get-involved')} className="block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation">Get Involved</button>
               <button onClick={() => scrollToSection('contact')} className="block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation">Contact</button>
@@ -134,21 +136,32 @@ export default function App() {
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-4 sm:mb-8 px-2">
               Igniting the next generation of innovators
             </p>
-            <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-12 max-w-2xl mx-auto px-2">
+            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">
               Bridging the digital gap between rural and urban youth through accessible IT education, digital literacy, and emerging technologies.
             </p>
+            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-2">
+              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm">Community-driven initiative</span>
+              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm">Youth-focused innovation hub</span>
+              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm">Empowering the next generation</span>
+            </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <button
                 onClick={() => scrollToSection('contact')}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation"
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation shadow-lg hover:shadow-xl"
               >
-                Join the Program
+                Join the Initiative
               </button>
               <button
-                onClick={() => scrollToSection('about')}
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg transition-all touch-manipulation"
+                onClick={() => scrollToSection('services')}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation shadow-lg hover:shadow-xl"
               >
-                Learn More
+                Explore Services
+              </button>
+              <button
+                onClick={() => scrollToSection('get-involved')}
+                className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium rounded-lg transition-all touch-manipulation"
+              >
+                Support the Mission
               </button>
             </div>
           </div>
@@ -158,6 +171,11 @@ export default function App() {
       {/* About Section */}
       <section id="about" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="inline-block px-6 py-2 bg-gradient-to-r from-[#caf0f8] to-[#ffc8dd] rounded-full mb-4">
+              <span className="text-sm font-medium text-gray-900">Bridging the digital gap through education and technology</span>
+            </div>
+          </div>
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
@@ -370,6 +388,95 @@ export default function App() {
         </div>
       </section>
 
+      {/* Professional Services Section */}
+      <section id="services" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 px-2">Professional Services</h2>
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-2">
+              Expert digital solutions for individuals and businesses ready to elevate their online presence
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+            {/* Website Design & Development */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#caf0f8] to-[#e7c6ff] rounded-xl flex items-center justify-center mb-6">
+                <Code className="w-7 h-7 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Website Design & Development</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Modern, responsive websites built with the latest technologies. From landing pages to full web applications.
+              </p>
+            </div>
+
+            {/* UI/UX Design */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#e7c6ff] to-[#ffc8dd] rounded-xl flex items-center justify-center mb-6">
+                <Sparkles className="w-7 h-7 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">UI/UX Design Services</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                User-centered design that creates intuitive and engaging digital experiences for your audience.
+              </p>
+            </div>
+
+            {/* Digital Branding */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#ffc8dd] to-[#caf0f8] rounded-xl flex items-center justify-center mb-6">
+                <Target className="w-7 h-7 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Digital Branding & Identity</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Create a memorable brand identity that resonates with your target audience across all digital platforms.
+              </p>
+            </div>
+
+            {/* Cybersecurity */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#caf0f8] to-[#ffc8dd] rounded-xl flex items-center justify-center mb-6">
+                <Shield className="w-7 h-7 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Cybersecurity Consultation</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Protect your digital assets with security awareness training and consultation for individuals and organizations.
+              </p>
+            </div>
+
+            {/* AI & Automation */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#e7c6ff] to-[#caf0f8] rounded-xl flex items-center justify-center mb-6">
+                <Cpu className="w-7 h-7 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">AI & Automation Solutions</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Leverage artificial intelligence and automation to streamline processes and enhance productivity.
+              </p>
+            </div>
+
+            {/* Digital Strategy */}
+            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
+              <div className="w-14 h-14 bg-gradient-to-br from-[#ffc8dd] to-[#e7c6ff] rounded-xl flex items-center justify-center mb-6">
+                <Lightbulb className="w-7 h-7 text-gray-900" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Digital Strategy & Online Presence</h3>
+              <p className="text-gray-600 text-sm mb-4">
+                Develop a comprehensive digital strategy to build and maintain a strong online presence for your brand.
+              </p>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="px-8 sm:px-10 py-3 sm:py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation"
+            >
+              Book a Consultation
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Impact Section */}
       <section id="impact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
@@ -465,6 +572,80 @@ export default function App() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Mission Expansion */}
+          <div className="mt-12 sm:mt-16 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-2xl p-8 sm:p-12">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-4">Our Commitment to Change</h3>
+              <p className="text-gray-700 max-w-3xl mx-auto">
+                Community-driven initiative bridging the digital gap through education and technology
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#caf0f8] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-gray-900" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Bridging the Digital Divide</h4>
+                    <p className="text-gray-600 text-sm">
+                      Breaking down barriers between rural and urban communities by providing equal access to technology education and resources.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#e7c6ff] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Users className="w-6 h-6 text-gray-900" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Empowering Youth with IT Skills</h4>
+                    <p className="text-gray-600 text-sm">
+                      Equipping young people with practical digital skills and knowledge to thrive in the modern technology-driven economy.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#ffc8dd] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Lightbulb className="w-6 h-6 text-gray-900" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Reducing Unemployment</h4>
+                    <p className="text-gray-600 text-sm">
+                      Creating pathways to employment and entrepreneurship through comprehensive tech education and mentorship programs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#caf0f8] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Heart className="w-6 h-6 text-gray-900" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg mb-2">Promoting Equal Access</h4>
+                    <p className="text-gray-600 text-sm">
+                      Ensuring every young person, regardless of background or location, has the opportunity to learn and grow in technology.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-gray-700 font-medium">
+                Youth-focused innovation hub committed to community transformation
+              </p>
             </div>
           </div>
         </div>
@@ -661,8 +842,8 @@ export default function App() {
                     </div>
                     <div>
                       <p className="font-medium mb-1">Email</p>
-                      <a href="mailto:siyayales@gmail.com" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
-                        siyayales@gmail.com
+                      <a href="mailto:l_siyaya@icloud.com" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
+                        l_siyaya@icloud.com
                       </a>
                     </div>
                   </div>
@@ -713,6 +894,7 @@ export default function App() {
               <div className="space-y-2 text-sm">
                 <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-[#ffc8dd] transition-colors">About Us</button>
                 <button onClick={() => scrollToSection('programs')} className="block text-gray-400 hover:text-[#ffc8dd] transition-colors">Programs</button>
+                <button onClick={() => scrollToSection('services')} className="block text-gray-400 hover:text-[#ffc8dd] transition-colors">Services</button>
                 <button onClick={() => scrollToSection('impact')} className="block text-gray-400 hover:text-[#ffc8dd] transition-colors">Impact</button>
                 <button onClick={() => scrollToSection('get-involved')} className="block text-gray-400 hover:text-[#ffc8dd] transition-colors">Get Involved</button>
               </div>
