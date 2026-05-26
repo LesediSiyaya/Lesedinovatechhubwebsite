@@ -14,11 +14,32 @@ export default function Impact() {
         </div>
       </section>
 
+      {/* Current Stats */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-center text-gray-400 text-sm mb-6 uppercase tracking-wider font-medium">Where We Are Today</p>
+          <div className="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-[#ffc8dd]">10+</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">Students Trained</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-[#e7c6ff]">5</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">Communities Reached</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-[#caf0f8]">7</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">Months Running</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Impact Goals */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Goals</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Our Goals by 2027</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Measurable targets driving our mission forward
             </p>
