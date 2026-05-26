@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle, Tag } from 'lucide-react';
+import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle, Tag, Globe } from 'lucide-react';
 
 export default function Services() {
   return (
@@ -302,6 +302,54 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Domain Registration */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <div className="w-16 h-16 bg-gradient-to-br from-[#caf0f8] to-[#e7c6ff] rounded-xl flex items-center justify-center mb-6">
+                <Globe className="w-8 h-8 text-gray-900" />
+              </div>
+              <h2 className="text-3xl font-bold mb-4">Domain Registration & Setup</h2>
+              <p className="text-gray-700 mb-6">
+                Get your business online with a professional domain name. We handle everything from finding the right domain to full DNS configuration and email setup — so you're up and running without the technical headache.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-block px-6 py-3 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all"
+              >
+                Register Your Domain
+              </Link>
+            </div>
+            <div className="bg-gray-50 p-8 rounded-2xl">
+              <h3 className="font-semibold text-lg mb-4">What's Included</h3>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#caf0f8] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Domain name search and registration (.co.za, .com, .org)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#caf0f8] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">DNS configuration and management</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#caf0f8] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Professional email setup (e.g. info@yourbusiness.co.za)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#caf0f8] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Domain connection to your website or hosting</span>
+                </li>
+              </ul>
+              <div className="pt-4 border-t border-gray-200">
+                <h4 className="font-semibold mb-2">Perfect For</h4>
+                <p className="text-sm text-gray-600">New businesses, freelancers, and anyone ready to establish a professional online presence with their own branded domain</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -471,6 +519,34 @@ export default function Services() {
                   { tier: 'Starter', price: 'R600', was: 'R1,000', desc: 'Digital presence audit' },
                   { tier: 'Standard', price: 'R1,500', was: 'R2,500', desc: 'Strategy roadmap + content plan' },
                   { tier: 'Premium', price: 'R3,000', was: 'R5,000', desc: 'Full strategy + implementation' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Domain Registration */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#caf0f8] to-[#e7c6ff] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Globe className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">Domain Registration</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Starter', price: 'R300', was: 'R500', desc: 'Domain registration + basic DNS' },
+                  { tier: 'Standard', price: 'R600', was: 'R1,000', desc: 'Domain + DNS + professional email' },
+                  { tier: 'Premium', price: 'R1,200', was: 'R2,000', desc: 'Full setup + hosting connection' },
                 ].map(({ tier, price, was, desc }) => (
                   <div key={tier} className="p-4 flex items-center justify-between gap-3">
                     <div>
