@@ -14,8 +14,35 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Quick Jump Nav */}
+      <section className="sticky top-16 z-40 bg-white border-b border-gray-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex gap-1 overflow-x-auto py-3 scrollbar-hide">
+            {[
+              { label: 'Web Design', href: '#website' },
+              { label: 'UI/UX', href: '#uiux' },
+              { label: 'Branding', href: '#branding' },
+              { label: 'Cybersecurity', href: '#cybersecurity' },
+              { label: 'AI & Auto', href: '#ai-automation' },
+              { label: 'Strategy', href: '#digital-strategy' },
+              { label: 'Biz Reg', href: '#business-registration' },
+              { label: 'Domain', href: '#domain' },
+              { label: 'Pricing', href: '#pricing' },
+            ].map(({ label, href }) => (
+              <a
+                key={href}
+                href={href}
+                className="shrink-0 px-4 py-1.5 text-sm font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-colors whitespace-nowrap"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Website Design & Development */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="website" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -63,7 +90,7 @@ export default function Services() {
       </section>
 
       {/* UI/UX Design */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="uiux" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1 bg-white p-8 rounded-2xl">
@@ -111,7 +138,7 @@ export default function Services() {
       </section>
 
       {/* Digital Branding */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="branding" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -159,7 +186,7 @@ export default function Services() {
       </section>
 
       {/* Cybersecurity */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="cybersecurity" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1 bg-white p-8 rounded-2xl">
@@ -207,7 +234,7 @@ export default function Services() {
       </section>
 
       {/* AI & Automation */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="ai-automation" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -255,7 +282,7 @@ export default function Services() {
       </section>
 
       {/* Digital Strategy */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="digital-strategy" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1 bg-white p-8 rounded-2xl">
@@ -303,7 +330,7 @@ export default function Services() {
       </section>
 
       {/* Business Registration */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="business-registration" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="order-2 md:order-1 bg-white p-8 rounded-2xl">
@@ -351,7 +378,7 @@ export default function Services() {
       </section>
 
       {/* Domain Registration */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="domain" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -399,7 +426,7 @@ export default function Services() {
       </section>
 
       {/* Pricing */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="pricing" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ffc8dd] rounded-full mb-4">
