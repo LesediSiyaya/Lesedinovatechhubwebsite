@@ -115,15 +115,23 @@ export default function Layout() {
             </div>
             <div>
               <h4 className="font-semibold mb-4">Connect With Us</h4>
-              <a
-                href="https://www.instagram.com/Lesedi_Siyaya"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-[#ffc8dd] transition-colors text-sm"
-              >
-                <Instagram className="w-4 h-4" />
-                @Lesedi_Siyaya
-              </a>
+              <div className="space-y-3 text-sm text-gray-400">
+                <a href="mailto:l_siyaya@icloud.com" className="block hover:text-[#ffc8dd] transition-colors">
+                  l_siyaya@icloud.com
+                </a>
+                <a href="tel:+27730849287" className="block hover:text-[#ffc8dd] transition-colors">
+                  073 084 9287
+                </a>
+                <a
+                  href="https://www.instagram.com/Lesedi_Siyaya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 hover:text-[#ffc8dd] transition-colors"
+                >
+                  <Instagram className="w-4 h-4" />
+                  @Lesedi_Siyaya
+                </a>
+              </div>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
