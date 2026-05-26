@@ -1,5 +1,85 @@
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Users, Sparkles, Heart } from 'lucide-react';
+import { Code, Shield, Cpu, Users, Sparkles, Heart, Clock, CheckCircle } from 'lucide-react';
+
+interface Program {
+  icon: React.ReactNode;
+  gradient: string;
+  title: string;
+  description: string;
+  topics: string[];
+  duration: string;
+  level: string;
+  dotColor: string;
+}
+
+const programs: Program[] = [
+  {
+    icon: <Users className="w-7 h-7 text-gray-900" />,
+    gradient: 'from-[#caf0f8] to-[#e7c6ff]',
+    dotColor: 'bg-[#caf0f8]',
+    title: 'Basic Computer Skills',
+    description:
+      'Learn essential computer fundamentals including typing, file management, internet navigation, and productivity software.',
+    topics: ['Microsoft Office Suite', 'Digital Communication', 'Online Safety Basics'],
+    duration: '4 weeks',
+    level: 'No experience needed',
+  },
+  {
+    icon: <Code className="w-7 h-7 text-gray-900" />,
+    gradient: 'from-[#e7c6ff] to-[#ffc8dd]',
+    dotColor: 'bg-[#e7c6ff]',
+    title: 'Introduction to Coding',
+    description:
+      'Start your programming journey with hands-on projects in web development and foundational programming concepts.',
+    topics: ['HTML, CSS & JavaScript', 'Python Fundamentals', 'Project-Based Learning'],
+    duration: '8 weeks',
+    level: 'Basic computer skills helpful',
+  },
+  {
+    icon: <Shield className="w-7 h-7 text-gray-900" />,
+    gradient: 'from-[#ffc8dd] to-[#caf0f8]',
+    dotColor: 'bg-[#ffc8dd]',
+    title: 'Cybersecurity Awareness',
+    description:
+      'Understand digital threats and learn how to protect yourself and others in the online world.',
+    topics: ['Password Security', 'Privacy Protection', 'Scam Awareness'],
+    duration: '3 weeks',
+    level: 'No experience needed',
+  },
+  {
+    icon: <Cpu className="w-7 h-7 text-gray-900" />,
+    gradient: 'from-[#caf0f8] to-[#ffc8dd]',
+    dotColor: 'bg-[#caf0f8]',
+    title: 'AI Fundamentals',
+    description:
+      'Explore artificial intelligence concepts and learn how AI is shaping the future of technology.',
+    topics: ['Machine Learning Basics', 'AI Tools & Applications', 'Ethical AI'],
+    duration: '6 weeks',
+    level: 'Basic computer skills helpful',
+  },
+  {
+    icon: <Sparkles className="w-7 h-7 text-gray-900" />,
+    gradient: 'from-[#e7c6ff] to-[#caf0f8]',
+    dotColor: 'bg-[#e7c6ff]',
+    title: 'Digital Literacy',
+    description:
+      'Develop critical thinking skills for navigating the digital world responsibly and effectively.',
+    topics: ['Information Evaluation', 'Digital Citizenship', 'Social Media Awareness'],
+    duration: '3 weeks',
+    level: 'No experience needed',
+  },
+  {
+    icon: <Heart className="w-7 h-7 text-gray-900" />,
+    gradient: 'from-[#ffc8dd] to-[#e7c6ff]',
+    dotColor: 'bg-[#ffc8dd]',
+    title: 'Mentorship Program',
+    description:
+      'Connect with experienced professionals who guide and support your learning journey.',
+    topics: ['One-on-One Guidance', 'Career Counseling', 'Skill Development'],
+    duration: 'Ongoing (3-month cycles)',
+    level: 'Open to all students',
+  },
+];
 
 export default function Programs() {
   return (
@@ -18,155 +98,85 @@ export default function Programs() {
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {/* Basic Computer Skills */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#caf0f8] to-[#e7c6ff] rounded-xl flex items-center justify-center mb-6">
-                <Users className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Basic Computer Skills</h3>
-              <p className="text-gray-600 mb-4">
-                Learn essential computer fundamentals including typing, file management, internet navigation, and productivity software.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#caf0f8] rounded-full"></div>
-                  Microsoft Office Suite
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#caf0f8] rounded-full"></div>
-                  Digital Communication
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#caf0f8] rounded-full"></div>
-                  Online Safety Basics
-                </li>
-              </ul>
-            </div>
+            {programs.map((prog) => (
+              <div
+                key={prog.title}
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col"
+              >
+                <div
+                  className={`w-14 h-14 bg-gradient-to-br ${prog.gradient} rounded-xl flex items-center justify-center mb-6`}
+                >
+                  {prog.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{prog.title}</h3>
+                <p className="text-gray-600 mb-4 text-sm sm:text-base flex-1">{prog.description}</p>
 
-            {/* Coding Introduction */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#e7c6ff] to-[#ffc8dd] rounded-xl flex items-center justify-center mb-6">
-                <Code className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Introduction to Coding</h3>
-              <p className="text-gray-600 mb-4">
-                Start your programming journey with hands-on projects in web development and foundational programming concepts.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#e7c6ff] rounded-full"></div>
-                  HTML, CSS & JavaScript
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#e7c6ff] rounded-full"></div>
-                  Python Fundamentals
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#e7c6ff] rounded-full"></div>
-                  Project-Based Learning
-                </li>
-              </ul>
-            </div>
+                <ul className="space-y-2 text-sm text-gray-600 mb-5">
+                  {prog.topics.map((t) => (
+                    <li key={t} className="flex items-center gap-2">
+                      <div className={`w-1.5 h-1.5 ${prog.dotColor} rounded-full flex-shrink-0`}></div>
+                      {t}
+                    </li>
+                  ))}
+                </ul>
 
-            {/* Cybersecurity Awareness */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#ffc8dd] to-[#caf0f8] rounded-xl flex items-center justify-center mb-6">
-                <Shield className="w-7 h-7 text-gray-900" />
+                <div className="border-t border-gray-100 pt-4 mt-auto space-y-1.5">
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <Clock className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" />
+                    <span><span className="font-medium text-gray-700">Duration:</span> {prog.duration}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-xs text-gray-500">
+                    <CheckCircle className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" />
+                    <span><span className="font-medium text-gray-700">Level:</span> {prog.level}</span>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Cybersecurity Awareness</h3>
-              <p className="text-gray-600 mb-4">
-                Understand digital threats and learn how to protect yourself and others in the online world.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#ffc8dd] rounded-full"></div>
-                  Password Security
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#ffc8dd] rounded-full"></div>
-                  Privacy Protection
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#ffc8dd] rounded-full"></div>
-                  Scam Awareness
-                </li>
-              </ul>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* AI Fundamentals */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#caf0f8] to-[#ffc8dd] rounded-xl flex items-center justify-center mb-6">
-                <Cpu className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">AI Fundamentals</h3>
-              <p className="text-gray-600 mb-4">
-                Explore artificial intelligence concepts and learn how AI is shaping the future of technology.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#caf0f8] rounded-full"></div>
-                  Machine Learning Basics
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#caf0f8] rounded-full"></div>
-                  AI Tools & Applications
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#caf0f8] rounded-full"></div>
-                  Ethical AI
-                </li>
-              </ul>
-            </div>
+      {/* How to Apply */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">How to Apply</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Getting started is simple — no forms, no complicated process.
+            </p>
+          </div>
 
-            {/* Digital Literacy */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#e7c6ff] to-[#caf0f8] rounded-xl flex items-center justify-center mb-6">
-                <Sparkles className="w-7 h-7 text-gray-900" />
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              {
+                step: '01',
+                title: 'Choose a Program',
+                desc: 'Pick the program that interests you most from the list above — or ask us which one suits you best.',
+                color: 'bg-[#caf0f8]',
+              },
+              {
+                step: '02',
+                title: 'Get in Touch',
+                desc: 'WhatsApp us on +27 73 084 9287 or email l_siyaya@icloud.com with your name, location, and chosen program.',
+                color: 'bg-[#e7c6ff]',
+              },
+              {
+                step: '03',
+                title: 'Start Learning',
+                desc: "We'll confirm your spot and share details about the schedule, location or online link, and what to bring.",
+                color: 'bg-[#ffc8dd]',
+              },
+            ].map(({ step, title, desc, color }) => (
+              <div key={step} className="text-center px-4">
+                <div
+                  className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mx-auto mb-4`}
+                >
+                  <span className="font-bold text-lg text-gray-900">{step}</span>
+                </div>
+                <h3 className="font-semibold text-lg mb-2">{title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{desc}</p>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Digital Literacy</h3>
-              <p className="text-gray-600 mb-4">
-                Develop critical thinking skills for navigating the digital world responsibly and effectively.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#e7c6ff] rounded-full"></div>
-                  Information Evaluation
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#e7c6ff] rounded-full"></div>
-                  Digital Citizenship
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#e7c6ff] rounded-full"></div>
-                  Social Media Awareness
-                </li>
-              </ul>
-            </div>
-
-            {/* Mentorship */}
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#ffc8dd] to-[#e7c6ff] rounded-xl flex items-center justify-center mb-6">
-                <Heart className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Mentorship Program</h3>
-              <p className="text-gray-600 mb-4">
-                Connect with experienced professionals who guide and support your learning journey.
-              </p>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#ffc8dd] rounded-full"></div>
-                  One-on-One Guidance
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#ffc8dd] rounded-full"></div>
-                  Career Counseling
-                </li>
-                <li className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 bg-[#ffc8dd] rounded-full"></div>
-                  Skill Development
-                </li>
-              </ul>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -178,12 +188,22 @@ export default function Programs() {
           <p className="text-gray-700 text-lg mb-8">
             Join our programs and take the first step toward building your future in technology.
           </p>
-          <Link
-            to="/contact"
-            className="inline-block px-8 py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation"
-          >
-            Apply Now
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="px-8 py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation text-center"
+            >
+              Apply Now
+            </Link>
+            <a
+              href="https://wa.me/27730849287"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all touch-manipulation text-center"
+            >
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       </section>
     </div>
