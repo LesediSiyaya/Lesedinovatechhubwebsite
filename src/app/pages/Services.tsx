@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle, Tag, Globe } from 'lucide-react';
+import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle, Tag, Globe, FileText } from 'lucide-react';
 
 export default function Services() {
   return (
@@ -302,6 +302,54 @@ export default function Services() {
         </div>
       </section>
 
+      {/* Business Registration */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="order-2 md:order-1 bg-white p-8 rounded-2xl">
+              <h3 className="font-semibold text-lg mb-4">What's Included</h3>
+              <ul className="space-y-3 mb-6">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#e7c6ff] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Business name search and reservation on CIPC</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#e7c6ff] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Company registration (PTY Ltd, NPC, Sole Proprietor)</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#e7c6ff] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">SARS income tax number registration</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-5 h-5 text-[#e7c6ff] flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700">Compliance guidance and documentation support</span>
+                </li>
+              </ul>
+              <div className="pt-4 border-t border-gray-200">
+                <h4 className="font-semibold mb-2">Perfect For</h4>
+                <p className="text-sm text-gray-600">Entrepreneurs, freelancers, and community organisations ready to formalise their business and operate legally in South Africa</p>
+              </div>
+            </div>
+            <div className="order-1 md:order-2">
+              <div className="w-16 h-16 bg-gradient-to-br from-[#e7c6ff] to-[#ffc8dd] rounded-xl flex items-center justify-center mb-6">
+                <FileText className="w-8 h-8 text-gray-900" />
+              </div>
+              <h2 className="text-3xl font-bold mb-4">Business Registration (CIPC)</h2>
+              <p className="text-gray-700 mb-6">
+                We guide you through the full business registration process with CIPC — from reserving your company name to obtaining your registration certificate and tax number. Take the stress out of going formal.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-block px-6 py-3 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all"
+              >
+                Register Your Business
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Domain Registration */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -519,6 +567,34 @@ export default function Services() {
                   { tier: 'Starter', price: 'R600', was: 'R1,000', desc: 'Digital presence audit' },
                   { tier: 'Standard', price: 'R1,500', was: 'R2,500', desc: 'Strategy roadmap + content plan' },
                   { tier: 'Premium', price: 'R3,000', was: 'R5,000', desc: 'Full strategy + implementation' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Business Registration */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#e7c6ff] to-[#ffc8dd] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <FileText className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">Business Registration</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Starter', price: 'R480', was: 'R800', desc: 'Name reservation + CIPC guidance' },
+                  { tier: 'Standard', price: 'R900', was: 'R1,500', desc: 'Full PTY Ltd / NPC registration' },
+                  { tier: 'Premium', price: 'R1,800', was: 'R3,000', desc: 'Registration + SARS + compliance' },
                 ].map(({ tier, price, was, desc }) => (
                   <div key={tier} className="p-4 flex items-center justify-between gap-3">
                     <div>
