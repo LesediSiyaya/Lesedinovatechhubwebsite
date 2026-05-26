@@ -1,16 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Lesedi NovaTech Hub Website</title>
-      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-    </head>
+    <title>Lesedi NovaTech Hub | Digital Education & Tech Services for Youth</title>
+    <meta name="description" content="Lesedi NovaTech Hub bridges the digital divide for rural youth in South Africa. We offer IT education programs, coding, cybersecurity training, and professional digital services including web design, UI/UX, and AI solutions." />
+    <link rel="canonical" href="https://lesnovatechhub.vercel.app/" />
+    <meta name="theme-color" content="#ffc8dd" />
 
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lesedi NovaTech Hub" />
+    <meta property="og:title" content="Lesedi NovaTech Hub | Digital Education & Tech Services for Youth" />
+    <meta property="og:description" content="Bridging the digital divide for rural youth in South Africa through IT education, coding, cybersecurity training, and professional digital services." />
+    <meta property="og:url" content="https://lesnovatechhub.vercel.app/" />
+    <meta property="og:locale" content="en_ZA" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lesedi NovaTech Hub | Digital Education & Tech Services for Youth" />
+    <meta name="twitter:description" content="Bridging the digital divide for rural youth in South Africa through IT education, coding, cybersecurity training, and professional digital services." />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://lesnovatechhub.vercel.app/#organization",
+          "name": "Lesedi NovaTech Hub",
+          "url": "https://lesnovatechhub.vercel.app/",
+          "description": "A community-driven initiative empowering rural youth through IT education, digital literacy, and emerging technologies in South Africa.",
+          "founder": {
+            "@type": "Person",
+            "name": "Lesedi Siyaya"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+27730849287",
+            "email": "l_siyaya@icloud.com",
+            "contactType": "customer service"
+          },
+          "sameAs": []
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://lesnovatechhub.vercel.app/#website",
+          "url": "https://lesnovatechhub.vercel.app/",
+          "name": "Lesedi NovaTech Hub",
+          "publisher": {
+            "@id": "https://lesnovatechhub.vercel.app/#organization"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
