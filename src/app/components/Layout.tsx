@@ -134,8 +134,12 @@ export default function Layout() {
               </div>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+          <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
             <p>&copy; 2026 Lesedi NovaTech Hub. Founded by Lesedi Siyaya. All rights reserved.</p>
+            <div className="flex gap-4">
+              <Link to="/faq" className="hover:text-[#ffc8dd] transition-colors">FAQ</Link>
+              <Link to="/privacy" className="hover:text-[#ffc8dd] transition-colors">Privacy Policy</Link>
+            </div>
           </div>
         </div>
       </footer>
