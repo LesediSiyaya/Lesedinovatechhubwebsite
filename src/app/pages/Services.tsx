@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle } from 'lucide-react';
+import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle, Tag } from 'lucide-react';
 
 export default function Services() {
   return (
@@ -299,6 +299,199 @@ export default function Services() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ffc8dd] rounded-full mb-4">
+              <Tag className="w-4 h-4 text-gray-900" />
+              <span className="text-sm font-semibold text-gray-900">Launch Special — 40% Off All Services</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3">Transparent Pricing</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Introductory rates to help you get started. Lock in these prices now before we grow.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {/* Website Design */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#caf0f8] to-[#e7c6ff] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Code className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">Website Design & Dev</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Starter', price: 'R1,500', was: 'R2,500', desc: 'Landing page, mobile-friendly' },
+                  { tier: 'Standard', price: 'R3,000', was: 'R5,000', desc: 'Multi-page site + contact form' },
+                  { tier: 'Premium', price: 'R6,000', was: 'R10,000', desc: 'Full web app + SEO optimised' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* UI/UX Design */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#e7c6ff] to-[#ffc8dd] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Sparkles className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">UI/UX Design</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Starter', price: 'R900', was: 'R1,500', desc: 'Wireframes + basic mockup' },
+                  { tier: 'Standard', price: 'R2,100', was: 'R3,500', desc: 'Full prototype + user testing' },
+                  { tier: 'Premium', price: 'R4,200', was: 'R7,000', desc: 'End-to-end UX with iterations' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Digital Branding */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#ffc8dd] to-[#caf0f8] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Target className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">Digital Branding</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Starter', price: 'R900', was: 'R1,500', desc: 'Logo + colour palette' },
+                  { tier: 'Standard', price: 'R1,800', was: 'R3,000', desc: 'Full identity + brand guide' },
+                  { tier: 'Premium', price: 'R3,600', was: 'R6,000', desc: 'Complete brand system' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Cybersecurity */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#caf0f8] to-[#ffc8dd] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Shield className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">Cybersecurity</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Per Session', price: 'R300', was: 'R500', desc: 'Awareness training session' },
+                  { tier: 'Standard', price: 'R720', was: 'R1,200', desc: 'Risk assessment + report' },
+                  { tier: 'Premium', price: 'R1,500', was: 'R2,500', desc: 'Full consultation + ongoing support' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* AI & Automation */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#e7c6ff] to-[#caf0f8] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Cpu className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">AI & Automation</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Starter', price: 'R1,200', was: 'R2,000', desc: 'Process audit + recommendations' },
+                  { tier: 'Standard', price: 'R3,000', was: 'R5,000', desc: 'Custom automation solution' },
+                  { tier: 'Premium', price: 'R6,000', was: 'R10,000', desc: 'Full AI integration + training' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Digital Strategy */}
+            <div className="border border-gray-200 rounded-2xl overflow-hidden">
+              <div className="bg-gradient-to-br from-[#ffc8dd] to-[#e7c6ff] p-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <Lightbulb className="w-5 h-5 text-gray-900" />
+                  <h3 className="font-semibold text-gray-900">Digital Strategy</h3>
+                </div>
+              </div>
+              <div className="divide-y divide-gray-100">
+                {[
+                  { tier: 'Starter', price: 'R600', was: 'R1,000', desc: 'Digital presence audit' },
+                  { tier: 'Standard', price: 'R1,500', was: 'R2,500', desc: 'Strategy roadmap + content plan' },
+                  { tier: 'Premium', price: 'R3,000', was: 'R5,000', desc: 'Full strategy + implementation' },
+                ].map(({ tier, price, was, desc }) => (
+                  <div key={tier} className="p-4 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="font-medium text-sm">{tier}</p>
+                      <p className="text-gray-500 text-xs">{desc}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className="font-bold text-gray-900">{price}</p>
+                      <p className="text-xs text-gray-400 line-through">{was}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-8">
+            All prices exclude VAT. Custom quotes available for larger projects.{' '}
+            <Link to="/contact" className="text-[#ffc8dd] hover:underline font-medium">Get in touch</Link> to discuss your needs.
+          </p>
         </div>
       </section>
 
