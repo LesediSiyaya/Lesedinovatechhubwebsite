@@ -6,6 +6,8 @@ import Programs from "./pages/Programs";
 import Services from "./pages/Services";
 import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
+import Privacy from "./pages/Privacy";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +20,8 @@ export const router = createBrowserRouter([
       { path: "services", Component: Services },
       { path: "impact", Component: Impact },
       { path: "contact", Component: Contact },
+      { path: "faq", Component: FAQ },
+      { path: "privacy", Component: Privacy },
       { path: "*", Component: Home },
     ],
   },
