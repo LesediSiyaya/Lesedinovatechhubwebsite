@@ -49,6 +49,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Impact Stats */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-3 gap-4 text-center">
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-[#ffc8dd]">10+</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">Students Trained</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-[#e7c6ff]">5</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">Communities Reached</p>
+            </div>
+            <div>
+              <p className="text-3xl sm:text-4xl font-bold text-[#caf0f8]">7</p>
+              <p className="text-gray-400 text-xs sm:text-sm mt-1">Months Running</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Overview - Programs */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
