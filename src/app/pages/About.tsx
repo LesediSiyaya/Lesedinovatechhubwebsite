@@ -24,7 +24,7 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-gray-700 mb-4 leading-relaxed">
-                Founded by <span className="font-semibold text-[#ffc8dd]">Lesedi Siyaya</span>, Lesedi NovaTech Hub was born from a vision to empower rural youth and bridge the digital divide that separates communities.
+                Founded by <span className="font-semibold text-[#ffc8dd]">Lesedi Siyaya</span>, the Hub was born from a vision to empower rural youth and bridge the digital divide that separates communities.
               </p>
               <p className="text-gray-700 mb-4 leading-relaxed">
                 In many rural areas, young people face limited access to quality education, technology resources, and opportunities to develop digital skills essential for the modern workforce. This creates a cycle of inequality that holds back entire communities.
@@ -79,13 +79,13 @@ export default function About() {
           </div>
           <div className="bg-white p-8 sm:p-12 rounded-2xl shadow-lg">
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Lesedi Siyaya founded Lesedi NovaTech Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
+              Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
             </p>
             <p className="text-gray-700 mb-4 leading-relaxed">
-              Growing up witnessing the disparities between rural and urban communities, Lesedi recognized that access to technology and digital literacy could be the key to unlocking potential and creating sustainable change.
+              Growing up witnessing the disparities between rural and urban communities, she recognized that access to technology and digital literacy could be the key to unlocking potential and creating sustainable change.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Through Lesedi NovaTech Hub, the vision is to empower young people not just with technical skills, but with the confidence and knowledge to pursue careers in technology, start their own ventures, and bring innovation back to their communities.
+              Through the Hub, the vision is to empower young people not just with technical skills, but with the confidence and knowledge to pursue careers in technology, start their own ventures, and bring innovation back to their communities.
             </p>
           </div>
         </div>
