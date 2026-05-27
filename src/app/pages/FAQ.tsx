@@ -123,7 +123,7 @@ export default function FAQ() {
               Contact Us
             </Link>
             <a
-              href="https://wa.me/27730849287"
+              href="https://wa.me/27730286401"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all touch-manipulation text-center"
