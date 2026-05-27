@@ -7,7 +7,7 @@ export default function Privacy() {
       <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-gray-500 text-sm">Last updated: May 2025</p>
+          <p className="text-gray-500 text-sm">Last updated: May 2026</p>
         </div>
       </section>
 
