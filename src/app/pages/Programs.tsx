@@ -157,7 +157,7 @@ export default function Programs() {
               {
                 step: '02',
                 title: 'Get in Touch',
-                desc: 'WhatsApp us on +27 73 084 9287 or email l_siyaya@icloud.com with your name, location, and chosen program.',
+                desc: 'WhatsApp us on +27 73 028 6401 or email lesnovatechub@gmail.com with your name, location, and chosen program.',
                 color: 'bg-[#e7c6ff]',
               },
               {
@@ -196,7 +196,7 @@ export default function Programs() {
               Apply Now
             </Link>
             <a
-              href="https://wa.me/27730849287"
+              href="https://wa.me/27730286401"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all touch-manipulation text-center"
