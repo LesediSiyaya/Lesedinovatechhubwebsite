@@ -173,8 +173,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium mb-1">Email</p>
-                      <a href="mailto:l_siyaya@icloud.com" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
-                        l_siyaya@icloud.com
+                      <a href="mailto:lesnovatechub@gmail.com" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
+                        lesnovatechub@gmail.com
                       </a>
                     </div>
                   </div>
@@ -184,8 +184,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="font-medium mb-1">Phone</p>
-                      <a href="tel:+27730849287" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
-                        073 084 9287
+                      <a href="tel:+27615451296" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
+                        061 545 1296
                       </a>
                     </div>
                   </div>
