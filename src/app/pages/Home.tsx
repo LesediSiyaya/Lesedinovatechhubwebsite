@@ -1,5 +1,26 @@
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Users, Sparkles } from 'lucide-react';
+import { Code, Shield, Cpu, Users, Sparkles, Quote } from 'lucide-react';
+
+const testimonials = [
+  {
+    quote:
+      'Lesedi NovaTech Hub creates an inspiring environment for young people to learn and grow through technology. Initiatives like this are important for bridging the digital gap in our communities and preparing youth for future opportunities.',
+    name: 'Community Supporter',
+    color: 'from-[#caf0f8] to-[#e7c6ff]',
+  },
+  {
+    quote:
+      'What stands out about Lesedi NovaTech Hub is its vision to make technology education more accessible to rural youth. The focus on coding, AI, and digital skills has the potential to positively impact many young lives.',
+    name: 'Local Youth Advocate',
+    color: 'from-[#e7c6ff] to-[#ffc8dd]',
+  },
+  {
+    quote:
+      'Seeing a youth-led initiative focused on innovation and community empowerment is truly motivating. Lesedi NovaTech Hub represents the kind of forward-thinking solutions needed to help young people succeed in a digital world.',
+    name: 'Education & Community Member',
+    color: 'from-[#ffc8dd] to-[#caf0f8]',
+  },
+];
 
 export default function Home() {
   return (
@@ -179,6 +200,38 @@ export default function Home() {
             >
               Explore All Services
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">What People Are Saying</h2>
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
+              Voices from the community that inspire us to keep going
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {testimonials.map(({ quote, name, color }) => (
+              <div
+                key={name}
+                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col"
+              >
+                <div className={`w-10 h-10 bg-gradient-to-br ${color} rounded-xl flex items-center justify-center mb-5 flex-shrink-0`}>
+                  <Quote className="w-5 h-5 text-gray-700" />
+                </div>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed flex-1 mb-6 italic">
+                  "{quote}"
+                </p>
+                <div className="flex items-center gap-3 mt-auto">
+                  <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${color} flex-shrink-0`} />
+                  <span className="text-sm font-semibold text-gray-800">— {name}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
