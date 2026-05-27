@@ -18,8 +18,7 @@ const programs: Program[] = [
     gradient: 'from-[#caf0f8] to-[#e7c6ff]',
     dotColor: 'bg-[#caf0f8]',
     title: 'Basic Computer Skills',
-    description:
-      'Learn essential computer fundamentals including typing, file management, internet navigation, and productivity software.',
+    description: 'Learn essential computer fundamentals including typing, file management, internet navigation, and productivity software.',
     topics: ['Microsoft Office Suite', 'Digital Communication', 'Online Safety Basics'],
     duration: '4 weeks',
     level: 'No experience needed',
@@ -29,8 +28,7 @@ const programs: Program[] = [
     gradient: 'from-[#e7c6ff] to-[#ffc8dd]',
     dotColor: 'bg-[#e7c6ff]',
     title: 'Introduction to Coding',
-    description:
-      'Start your programming journey with hands-on projects in web development and foundational programming concepts.',
+    description: 'Start your programming journey with hands-on projects in web development and foundational programming concepts.',
     topics: ['HTML, CSS & JavaScript', 'Python Fundamentals', 'Project-Based Learning'],
     duration: '8 weeks',
     level: 'Basic computer skills helpful',
@@ -40,8 +38,7 @@ const programs: Program[] = [
     gradient: 'from-[#ffc8dd] to-[#caf0f8]',
     dotColor: 'bg-[#ffc8dd]',
     title: 'Cybersecurity Awareness',
-    description:
-      'Understand digital threats and learn how to protect yourself and others in the online world.',
+    description: 'Understand digital threats and learn how to protect yourself and others in the online world.',
     topics: ['Password Security', 'Privacy Protection', 'Scam Awareness'],
     duration: '3 weeks',
     level: 'No experience needed',
@@ -51,8 +48,7 @@ const programs: Program[] = [
     gradient: 'from-[#caf0f8] to-[#ffc8dd]',
     dotColor: 'bg-[#caf0f8]',
     title: 'AI Fundamentals',
-    description:
-      'Explore artificial intelligence concepts and learn how AI is shaping the future of technology.',
+    description: 'Explore artificial intelligence concepts and learn how AI is shaping the future of technology.',
     topics: ['Machine Learning Basics', 'AI Tools & Applications', 'Ethical AI'],
     duration: '6 weeks',
     level: 'Basic computer skills helpful',
@@ -62,8 +58,7 @@ const programs: Program[] = [
     gradient: 'from-[#e7c6ff] to-[#caf0f8]',
     dotColor: 'bg-[#e7c6ff]',
     title: 'Digital Literacy',
-    description:
-      'Develop critical thinking skills for navigating the digital world responsibly and effectively.',
+    description: 'Develop critical thinking skills for navigating the digital world responsibly and effectively.',
     topics: ['Information Evaluation', 'Digital Citizenship', 'Social Media Awareness'],
     duration: '3 weeks',
     level: 'No experience needed',
@@ -73,8 +68,7 @@ const programs: Program[] = [
     gradient: 'from-[#ffc8dd] to-[#e7c6ff]',
     dotColor: 'bg-[#ffc8dd]',
     title: 'Mentorship Program',
-    description:
-      'Connect with experienced professionals who guide and support your learning journey.',
+    description: 'Connect with experienced professionals who guide and support your learning journey.',
     topics: ['One-on-One Guidance', 'Career Counseling', 'Skill Development'],
     duration: 'Ongoing (3-month cycles)',
     level: 'Open to all students',
@@ -94,6 +88,20 @@ export default function Programs() {
         </div>
       </section>
 
+      {/* Visual Banner */}
+      <section className="relative h-52 sm:h-64 overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80"
+          alt="Students learning digital skills together"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/75 via-gray-900/40 to-transparent flex items-center px-8 sm:px-16">
+          <p className="text-white text-lg sm:text-xl font-semibold leading-relaxed max-w-sm sm:max-w-md">
+            Free programs designed for youth who are ready to shape their digital future.
+          </p>
+        </div>
+      </section>
+
       {/* Programs Grid */}
       <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -103,14 +111,11 @@ export default function Programs() {
                 key={prog.title}
                 className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col"
               >
-                <div
-                  className={`w-14 h-14 bg-gradient-to-br ${prog.gradient} rounded-xl flex items-center justify-center mb-6`}
-                >
+                <div className={`w-14 h-14 bg-gradient-to-br ${prog.gradient} rounded-xl flex items-center justify-center mb-6`}>
                   {prog.icon}
                 </div>
                 <h3 className="text-xl font-semibold mb-3">{prog.title}</h3>
                 <p className="text-gray-600 mb-4 text-sm sm:text-base flex-1">{prog.description}</p>
-
                 <ul className="space-y-2 text-sm text-gray-600 mb-5">
                   {prog.topics.map((t) => (
                     <li key={t} className="flex items-center gap-2">
@@ -119,7 +124,6 @@ export default function Programs() {
                     </li>
                   ))}
                 </ul>
-
                 <div className="border-t border-gray-100 pt-4 mt-auto space-y-1.5">
                   <div className="flex items-center gap-2 text-xs text-gray-500">
                     <Clock className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" />
@@ -145,32 +149,14 @@ export default function Programs() {
               Getting started is simple — no forms, no complicated process.
             </p>
           </div>
-
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              {
-                step: '01',
-                title: 'Choose a Program',
-                desc: 'Pick the program that interests you most from the list above — or ask us which one suits you best.',
-                color: 'bg-[#caf0f8]',
-              },
-              {
-                step: '02',
-                title: 'Get in Touch',
-                desc: 'WhatsApp us on +27 73 028 6401 or email lesnovatechub@gmail.com with your name, location, and chosen program.',
-                color: 'bg-[#e7c6ff]',
-              },
-              {
-                step: '03',
-                title: 'Start Learning',
-                desc: "We'll confirm your spot and share details about the schedule, location or online link, and what to bring.",
-                color: 'bg-[#ffc8dd]',
-              },
+              { step: '01', title: 'Choose a Program', desc: 'Pick the program that interests you most from the list above — or ask us which one suits you best.', color: 'bg-[#caf0f8]' },
+              { step: '02', title: 'Get in Touch', desc: 'WhatsApp us on +27 73 028 6401 or email lesnovatechub@gmail.com with your name, location, and chosen program.', color: 'bg-[#e7c6ff]' },
+              { step: '03', title: 'Start Learning', desc: "We'll confirm your spot and share details about the schedule, online link, and what to prepare.", color: 'bg-[#ffc8dd]' },
             ].map(({ step, title, desc, color }) => (
               <div key={step} className="text-center px-4">
-                <div
-                  className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mx-auto mb-4`}
-                >
+                <div className={`w-14 h-14 ${color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                   <span className="font-bold text-lg text-gray-900">{step}</span>
                 </div>
                 <h3 className="font-semibold text-lg mb-2">{title}</h3>
