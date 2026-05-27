@@ -1,16 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
-import { Sparkles, Menu, X, Instagram } from 'lucide-react';
+import { Sparkles, Menu, X, Instagram, ChevronUp } from 'lucide-react';
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [whatsappOpen, setWhatsappOpen] = useState(true);
+  const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => setShowBackToTop(window.scrollY > 400);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
   const isActive = (path: string) => {
-    if (path === '/') {
-      return location.pathname === '/';
-    }
+    if (path === '/') return location.pathname === '/';
     return location.pathname.startsWith(path);
   };
 
@@ -64,27 +75,32 @@ export default function Layout() {
               onClick={() => setMenuOpen(!menuOpen)}
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              <span className={`block transition-all duration-200 ${menuOpen ? 'rotate-90' : 'rotate-0'}`}>
+                {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </span>
             </button>
           </div>
 
-          {/* Mobile Menu */}
-          {menuOpen && (
-            <div className="md:hidden py-4 space-y-1 border-t border-gray-100">
+          {/* Mobile Menu — animated */}
+          <div
+            className={`md:hidden border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${
+              menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            }`}
+          >
+            <div className="py-3 space-y-1">
               {navLinks.map(({ path, label }) => (
                 <Link
                   key={path}
                   to={path}
-                  onClick={() => setMenuOpen(false)}
                   className={`block w-full text-left px-4 py-3 hover:bg-gray-50 hover:text-[#ffc8dd] transition-colors rounded-lg touch-manipulation ${
-                    isActive(path) ? 'text-[#ffc8dd] bg-gray-50' : ''
+                    isActive(path) ? 'text-[#ffc8dd] bg-gray-50 font-medium' : ''
                   }`}
                 >
                   {label}
                 </Link>
               ))}
             </div>
-          )}
+          </div>
         </div>
       </nav>
 
@@ -142,7 +158,7 @@ export default function Layout() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-            <p>&copy; 2026 Lesedi NovaTech Hub. Founded by Lesedi Siyaya. All rights reserved.copy; 2026 Lesedi NovaTech Hub. All rights reserved.</p>
+            <p>&copy; 2026 Lesedi NovaTech Hub. All rights reserved.</p>
             <div className="flex gap-4">
               <Link to="/faq" className="hover:text-[#ffc8dd] transition-colors">FAQ</Link>
               <Link to="/privacy" className="hover:text-[#ffc8dd] transition-colors">Privacy Policy</Link>
@@ -173,6 +189,17 @@ export default function Layout() {
           {whatsappOpen ? <X className="w-5 h-5" /> : whatsappIcon}
         </button>
       </div>
+
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className={`fixed bottom-6 left-6 z-50 w-11 h-11 bg-gray-900 hover:bg-gray-700 text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${
+          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+        }`}
+        aria-label="Back to top"
+      >
+        <ChevronUp className="w-5 h-5" />
+      </button>
     </div>
   );
 }
