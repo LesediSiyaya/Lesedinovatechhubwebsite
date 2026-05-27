@@ -1,15 +1,22 @@
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Users, Target, Heart, Lightbulb, Sparkles } from 'lucide-react';
+import { Code, Shield, Cpu, Users, Sparkles } from 'lucide-react';
 
 export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="pt-12 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-12 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Soft background glow */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#ffc8dd] rounded-full opacity-[0.12] blur-3xl" />
+          <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] bg-[#caf0f8] rounded-full opacity-[0.12] blur-3xl" />
+          <div className="absolute -bottom-16 right-1/3 w-[350px] h-[350px] bg-[#e7c6ff] rounded-full opacity-[0.10] blur-3xl" />
+        </div>
+
+        <div className="max-w-7xl mx-auto relative">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-block px-4 sm:px-6 py-2 bg-gradient-to-r from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-full mb-4 sm:mb-6">
-              <span className="text-xs sm:text-sm font-medium">Digital Empowerment for All</span>
+              <span className="text-xs sm:text-sm font-medium">Digital Empowerment for All · South Africa</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#030213] via-[#e7c6ff] to-[#ffc8dd] bg-clip-text text-transparent px-2">
               Lesedi NovaTech Hub
@@ -21,9 +28,9 @@ export default function Home() {
               Bridging the digital gap between rural and urban youth through accessible IT education, digital literacy, and emerging technologies.
             </p>
             <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-2">
-              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm">Community-driven initiative</span>
-              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm">Youth-focused innovation hub</span>
-              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm">Empowering the next generation</span>
+              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm border border-white">Community-driven initiative</span>
+              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm border border-white">Youth-focused innovation hub</span>
+              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm border border-white">Empowering the next generation</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Link
@@ -52,6 +59,7 @@ export default function Home() {
       {/* Impact Stats */}
       <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-4xl mx-auto">
+          <p className="text-center text-gray-500 text-xs uppercase tracking-widest mb-6 font-medium">Growing every month</p>
           <div className="grid grid-cols-3 gap-4 text-center">
             <div>
               <p className="text-3xl sm:text-4xl font-bold text-[#ffc8dd]">10+</p>
