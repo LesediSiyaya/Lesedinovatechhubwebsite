@@ -126,8 +126,8 @@ export default function Layout() {
                 <a href="mailto:lesnovatechub@gmail.com" className="block hover:text-[#ffc8dd] transition-colors">
                   lesnovatechub@gmail.com
                 </a>
-                <a href="tel:+27615451296" className="block hover:text-[#ffc8dd] transition-colors">
-                  061 545 1296
+                <a href="tel:+27730286401" className="block hover:text-[#ffc8dd] transition-colors">
+                  073 028 6401
                 </a>
                 <a
                   href="https://www.instagram.com/lesedinovatech_hub"
@@ -142,7 +142,7 @@ export default function Layout() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-            <p>&copy; 2026 Lesedi NovaTech Hub. Founded by Lesedi Siyaya. All rights reserved.</p>
+            <p>&copy; 2026 Lesedi NovaTech Hub. Founded by Lesedi Siyaya. All rights reserved.copy; 2026 Lesedi NovaTech Hub. All rights reserved.</p>
             <div className="flex gap-4">
               <Link to="/faq" className="hover:text-[#ffc8dd] transition-colors">FAQ</Link>
               <Link to="/privacy" className="hover:text-[#ffc8dd] transition-colors">Privacy Policy</Link>
@@ -155,7 +155,7 @@ export default function Layout() {
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
         {whatsappOpen && (
           <a
-            href="https://wa.me/27615451296"
+            href="https://wa.me/27730286401"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-medium px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
