@@ -46,7 +46,7 @@ const faqs: FAQItem[] = [
   {
     question: 'How do I apply for the training programs?',
     answer:
-      'Applying is simple — just reach out via our Contact page or WhatsApp us on +27 73 084 9287. Tell us which program you are interested in, your location, and a bit about yourself. There is no formal entry requirement; all you need is the willingness to learn.',
+      'Applying is simple — just reach out via our Contact page or WhatsApp us on +27 73 028 6401. Tell us which program you are interested in, your location, and a bit about yourself. There is no formal entry requirement; all you need is the willingness to learn.',
   },
   {
     question: 'Do I need any prior experience to join the programs?',
@@ -56,7 +56,7 @@ const faqs: FAQItem[] = [
   {
     question: 'How can I get a quote for my project?',
     answer:
-      'The quickest way is to contact us via WhatsApp (+27 73 084 9287) or email (l_siyaya@icloud.com) with a short description of what you need. We will get back to you with a tailored quote, usually within one business day. You can also visit our Services page for our standard pricing.',
+      'The quickest way is to contact us via WhatsApp (+27 73 028 6401) or email (lesnovatechub@gmail.com) with a short description of what you need. We will get back to you with a tailored quote, usually within one business day. You can also visit our Services page for our standard pricing.',
   },
 ];
 
