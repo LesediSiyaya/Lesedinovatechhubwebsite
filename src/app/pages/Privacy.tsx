@@ -113,9 +113,9 @@ export default function Privacy() {
                 If you have any questions or concerns about this Privacy Policy, please get in touch:
               </p>
               <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
-                <li><span className="font-medium">Email:</span> <a href="mailto:l_siyaya@icloud.com" className="text-[#e7c6ff] underline">l_siyaya@icloud.com</a></li>
-                <li><span className="font-medium">WhatsApp:</span> <a href="https://wa.me/27730849287" className="text-[#e7c6ff] underline">+27 73 084 9287</a></li>
-                <li><span className="font-medium">Instagram:</span> <a href="https://instagram.com/Lesedi_Siyaya" target="_blank" rel="noopener noreferrer" className="text-[#e7c6ff] underline">@Lesedi_Siyaya</a></li>
+                <li><span className="font-medium">Email:</span> <a href="mailto:lesnovatechub@gmail.com" className="text-[#e7c6ff] underline">lesnovatechub@gmail.com</a></li>
+                <li><span className="font-medium">WhatsApp:</span> <a href="https://wa.me/27730286401" className="text-[#e7c6ff] underline">+27 73 028 6401</a></li>
+                <li><span className="font-medium">Instagram:</span> <a href="https://instagram.com/lesedinovatech_hub" target="_blank" rel="noopener noreferrer" className="text-[#e7c6ff] underline">@lesedinovatech_hub</a></li>
               </ul>
             </div>
 
