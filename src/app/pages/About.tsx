@@ -88,8 +88,8 @@ export default function About() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="h-56 sm:h-72 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80"
-                alt="Students engaged in tech learning"
+                src="/founder.png"
+                alt="Lesedi Siyaya, Founder of Lesedi NovaTech Hub"
                 className="w-full h-full object-cover object-center"
               />
             </div>
