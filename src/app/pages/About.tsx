@@ -33,32 +33,40 @@ export default function About() {
                 Our hub provides a welcoming space where youth can learn, grow, and discover their potential in technology. We believe that with the right support, every young person can become an innovator and change-maker in their community.
               </p>
             </div>
-            <div className="bg-gray-50 p-8 rounded-2xl shadow-lg">
-              <div className="space-y-6">
+
+            <div className="rounded-2xl shadow-lg overflow-hidden">
+              <div className="h-48 sm:h-52 overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80"
+                  alt="Young people engaged in technology and community"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div className="bg-gray-50 p-6 sm:p-8 space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#caf0f8] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Target className="w-6 h-6 text-gray-900" />
+                  <div className="w-11 h-11 bg-[#caf0f8] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Target className="w-5 h-5 text-gray-900" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Our Vision</h3>
+                    <h3 className="font-semibold mb-1">Our Vision</h3>
                     <p className="text-gray-600 text-sm">A future where every youth has equal access to digital opportunities</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#e7c6ff] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Heart className="w-6 h-6 text-gray-900" />
+                  <div className="w-11 h-11 bg-[#e7c6ff] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Heart className="w-5 h-5 text-gray-900" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Our Values</h3>
+                    <h3 className="font-semibold mb-1">Our Values</h3>
                     <p className="text-gray-600 text-sm">Inclusivity, innovation, empowerment, and community transformation</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#ffc8dd] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Lightbulb className="w-6 h-6 text-gray-900" />
+                  <div className="w-11 h-11 bg-[#ffc8dd] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Lightbulb className="w-5 h-5 text-gray-900" />
                   </div>
                   <div>
-                    <h3 className="font-semibold mb-2">Our Approach</h3>
+                    <h3 className="font-semibold mb-1">Our Approach</h3>
                     <p className="text-gray-600 text-sm">Hands-on learning, mentorship, and real-world skills development</p>
                   </div>
                 </div>
@@ -74,19 +82,28 @@ export default function About() {
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-600">
-              Lesedi Siyaya - Visionary leader committed to bridging the digital divide
+              Lesedi Siyaya — Visionary leader committed to bridging the digital divide
             </p>
           </div>
-          <div className="bg-white p-8 sm:p-12 rounded-2xl shadow-lg">
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
-            </p>
-            <p className="text-gray-700 mb-4 leading-relaxed">
-              Growing up witnessing the disparities between rural and urban communities, she recognized that access to technology and digital literacy could be the key to unlocking potential and creating sustainable change.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Through the Hub, the vision is to empower young people not just with technical skills, but with the confidence and knowledge to pursue careers in technology, start their own ventures, and bring innovation back to their communities.
-            </p>
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="h-56 sm:h-72 overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=900&q=80"
+                alt="Students engaged in tech learning"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="p-8 sm:p-12">
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
+              </p>
+              <p className="text-gray-700 mb-4 leading-relaxed">
+                Growing up witnessing the disparities between rural and urban communities, she recognized that access to technology and digital literacy could be the key to unlocking potential and creating sustainable change.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Through the Hub, the vision is to empower young people not just with technical skills, but with the confidence and knowledge to pursue careers in technology, start their own ventures, and bring innovation back to their communities.
+              </p>
+            </div>
           </div>
         </div>
       </section>
