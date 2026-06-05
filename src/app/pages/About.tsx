@@ -118,6 +118,53 @@ export default function About() {
         </div>
       </section>
 
+      {/* Recognition & Partnerships */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <div className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#caf0f8] to-[#e7c6ff] rounded-full mb-4">
+              <span className="text-xs font-semibold tracking-widest text-gray-700 uppercase">Recognition &amp; Partnerships</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-3">Trusted &amp; Recognised</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Lesedi NovaTech Hub is backed by leading organisations committed to education, youth empowerment, and digital inclusion.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <div className="relative bg-gradient-to-br from-[#caf0f8]/30 to-white border border-[#caf0f8] rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-[#caf0f8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-7 h-7 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                </svg>
+              </div>
+              <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Certificate of Mentorship</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Study Trust</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Awarded for outstanding mentorship contributions to youth education and academic development.</p>
+            </div>
+            <div className="relative bg-gradient-to-br from-[#e7c6ff]/30 to-white border border-[#e7c6ff] rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-[#e7c6ff] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-7 h-7 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                </svg>
+              </div>
+              <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Certificate of Service</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">First National Bank</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Recognised by FNB for dedicated service and meaningful contribution to the community and youth development.</p>
+            </div>
+            <div className="relative bg-gradient-to-br from-[#ffc8dd]/30 to-white border border-[#ffc8dd] rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-[#ffc8dd] rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-7 h-7 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                </svg>
+              </div>
+              <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Academic Sponsorship</p>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">HP Trust</h3>
+              <p className="text-sm text-gray-600 leading-relaxed">Sponsored by HP Trust throughout the BSc in Information Technology degree, supporting the next generation of tech leaders.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd]">
         <div className="max-w-4xl mx-auto text-center">
