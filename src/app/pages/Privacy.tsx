@@ -1,6 +1,9 @@
 import { Link } from 'react-router';
+import { useSEO } from '../components/useSEO';
 
 export default function Privacy() {
+  useSEO({ title: 'Privacy Policy', description: `Read the Lesedi NovaTech Hub privacy policy to understand how we collect, use, and protect your personal information on our website and services.`, path: '/privacy' });
+
   return (
     <div>
       {/* Header */}
