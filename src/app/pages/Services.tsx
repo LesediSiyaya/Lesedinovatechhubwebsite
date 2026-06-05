@@ -1,7 +1,10 @@
 import { Link } from 'react-router';
 import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle, Tag, Globe, FileText } from 'lucide-react';
+import { useSEO } from '../components/useSEO';
 
 export default function Services() {
+  useSEO({ title: 'Professional Digital Services – Web Design, UI/UX & AI', description: `Lesedi NovaTech Hub offers affordable web design, mobile app development, UI/UX design, cybersecurity consulting, digital marketing, and AI solutions for businesses.`, path: '/services' });
+
   return (
     <div>
       {/* Header */}
