@@ -1,0 +1,14 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "B_7yrG_VPXeJ3MiQK5Oru"
+uri = "file://sponsorship-proposal.md"
+type = "text"
+title = "Sponsorship Proposal — Lesedi NovaTech Hub"
+
+[[outputs]]
+id = "fD2HdUsTR31VeCrY9et0E"
+uri = "file://marketing-strategy.md"
+type = "text"
+title = "12-Month Marketing Strategy — Lesedi NovaTech Hub"
