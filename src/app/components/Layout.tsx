@@ -1,15 +1,19 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
-import { Sparkles, Menu, X, Instagram, ChevronUp } from 'lucide-react';
+import { Sparkles, Menu, X, Instagram, ChevronUp, CalendarDays } from 'lucide-react';
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [whatsappOpen, setWhatsappOpen] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [showConsult, setShowConsult] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setShowBackToTop(window.scrollY > 400);
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400);
+      setShowConsult(window.scrollY > 300);
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -167,6 +171,23 @@ export default function Layout() {
         </div>
       </footer>
 
+
+      {/* Book a Free Consultation — floating pill */}
+      <div
+        className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-40 transition-all duration-500 ${
+          showConsult && location.pathname !== '/contact'
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 translate-y-6 pointer-events-none'
+        }`}
+      >
+        <Link
+          to="/contact"
+          className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-[#e7c6ff] via-[#ffc8dd] to-[#caf0f8] text-gray-900 font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap"
+        >
+          <CalendarDays className="w-4 h-4 flex-shrink-0" />
+          Book a Free Consultation
+        </Link>
+      </div>
       {/* WhatsApp Floating Button */}
       <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
         {whatsappOpen && (
