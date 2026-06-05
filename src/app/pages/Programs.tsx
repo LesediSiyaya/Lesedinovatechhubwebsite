@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { Code, Shield, Cpu, Users, Sparkles, Heart, Clock, CheckCircle } from 'lucide-react';
+import { useSEO } from '../components/useSEO';
 
 interface Program {
   icon: React.ReactNode;
@@ -76,6 +77,8 @@ const programs: Program[] = [
 ];
 
 export default function Programs() {
+  useSEO({ title: 'Free Tech Programs – Coding, Cybersecurity & More', description: `Explore our free youth technology programs including coding bootcamps, cybersecurity awareness, digital literacy, AI & Machine Learning, and social media marketing.`, path: '/programs' });
+
   return (
     <div>
       {/* Header */}
