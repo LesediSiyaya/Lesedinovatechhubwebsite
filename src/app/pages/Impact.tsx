@@ -10,6 +10,9 @@ export default function Impact() {
       {/* Header */}
       <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-full mb-4">
+            <span className="text-xs sm:text-sm font-medium">Transforming communities through technology</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Impact</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Creating lasting change in communities through technology education and empowerment
@@ -21,16 +24,16 @@ export default function Impact() {
       <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <p className="text-center text-gray-400 text-sm mb-6 uppercase tracking-wider font-medium">Where We Are Today</p>
-          <div className="grid grid-cols-3 gap-4 text-center">
-            <div>
+          <div className="flex items-center justify-center gap-0 divide-x divide-gray-700">
+            <div className="flex-1 text-center px-4">
               <p className="text-3xl sm:text-4xl font-bold text-[#ffc8dd]">10+</p>
               <p className="text-gray-400 text-xs sm:text-sm mt-1">Students Trained</p>
             </div>
-            <div>
+            <div className="flex-1 text-center px-4">
               <p className="text-3xl sm:text-4xl font-bold text-[#e7c6ff]">5</p>
               <p className="text-gray-400 text-xs sm:text-sm mt-1">Communities Reached</p>
             </div>
-            <div>
+            <div className="flex-1 text-center px-4">
               <p className="text-3xl sm:text-4xl font-bold text-[#caf0f8]">7</p>
               <p className="text-gray-400 text-xs sm:text-sm mt-1">Months Running</p>
             </div>
