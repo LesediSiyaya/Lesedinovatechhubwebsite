@@ -63,7 +63,6 @@ const faqs: FAQItem[] = [
 
 function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
   const [open, setOpen] = useState(false);
-  useSEO({ title: 'FAQs – Frequently Asked Questions', description: `Find answers to common questions about Lesedi NovaTech Hub's free programs, digital services, eligibility, pricing, and how to get involved.`, path: '/faq' });
 
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden">
@@ -90,11 +89,16 @@ function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
 }
 
 export default function FAQ() {
+  useSEO({ title: 'FAQs – Frequently Asked Questions', description: `Find answers to common questions about Lesedi NovaTech Hub's free programs, digital services, eligibility, pricing, and how to get involved.`, path: '/faq' });
+
   return (
     <div>
       {/* Header */}
       <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-full mb-4">
+            <span className="text-xs sm:text-sm font-medium">Got questions? We have answers</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Answers to the questions we hear most often — from both clients and students.
