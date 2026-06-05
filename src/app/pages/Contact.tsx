@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Phone, Sparkles } from 'lucide-react';
 import { projectId, publicAnonKey } from '/utils/supabase/info';
+import { useSEO } from '../components/useSEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -55,6 +56,8 @@ export default function Contact() {
       setIsSubmitting(false);
     }
   };
+  useSEO({ title: 'Contact Us – Get in Touch', description: `Contact Lesedi NovaTech Hub to join a program, request a service quote, or learn more. Reach us by email at lesnovatechub@gmail.com or WhatsApp 073 028 6401.`, path: '/contact' });
+
 
   return (
     <div>
