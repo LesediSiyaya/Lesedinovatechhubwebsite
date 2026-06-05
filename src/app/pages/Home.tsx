@@ -96,6 +96,7 @@ export default function Home() {
                 <p className="text-xs text-gray-500">Certificate of Mentorship</p>
               </div>
             </div>
+            <div className="sm:hidden w-full h-px bg-gray-200 my-1" />
             <div className="hidden sm:block w-px h-10 bg-gray-200" />
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 bg-[#e7c6ff] rounded-full flex items-center justify-center flex-shrink-0">
@@ -108,6 +109,7 @@ export default function Home() {
                 <p className="text-xs text-gray-500">Certificate of Service</p>
               </div>
             </div>
+            <div className="sm:hidden w-full h-px bg-gray-200 my-1" />
             <div className="hidden sm:block w-px h-10 bg-gray-200" />
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 bg-[#ffc8dd] rounded-full flex items-center justify-center flex-shrink-0">
