@@ -1,7 +1,10 @@
 import { Link } from 'react-router';
 import { Users, Heart, Target, Lightbulb } from 'lucide-react';
+import { useSEO } from '../components/useSEO';
 
 export default function Impact() {
+  useSEO({ title: 'Our Impact – Transforming Youth Through Technology', description: `See the real impact Lesedi NovaTech Hub is making in rural South Africa — youth empowered, communities connected, and futures shaped through technology education.`, path: '/impact' });
+
   return (
     <div>
       {/* Header */}
