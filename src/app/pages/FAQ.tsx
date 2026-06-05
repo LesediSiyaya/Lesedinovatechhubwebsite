@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router';
+import { useSEO } from '../components/useSEO';
 
 interface FAQItem {
   question: string;
@@ -62,6 +63,8 @@ const faqs: FAQItem[] = [
 
 function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
   const [open, setOpen] = useState(false);
+  useSEO({ title: 'FAQs – Frequently Asked Questions', description: `Find answers to common questions about Lesedi NovaTech Hub's free programs, digital services, eligibility, pricing, and how to get involved.`, path: '/faq' });
+
   return (
     <div className="border border-gray-200 rounded-xl overflow-hidden">
       <button
