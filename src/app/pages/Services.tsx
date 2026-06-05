@@ -478,6 +478,7 @@ export default function Services() {
                 <div className="flex items-center gap-2 mb-1">
                   <Sparkles className="w-5 h-5 text-gray-900" />
                   <h3 className="font-semibold text-gray-900">UI/UX Design</h3>
+                <p className="text-xs text-gray-700 mt-0.5 opacity-80">Interfaces people love to use</p>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
@@ -506,6 +507,7 @@ export default function Services() {
                 <div className="flex items-center gap-2 mb-1">
                   <Target className="w-5 h-5 text-gray-900" />
                   <h3 className="font-semibold text-gray-900">Digital Branding</h3>
+                <p className="text-xs text-gray-700 mt-0.5 opacity-80">Logos, identity &amp; brand systems that stand out</p>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
@@ -534,6 +536,7 @@ export default function Services() {
                 <div className="flex items-center gap-2 mb-1">
                   <Shield className="w-5 h-5 text-gray-900" />
                   <h3 className="font-semibold text-gray-900">Cybersecurity</h3>
+                <p className="text-xs text-gray-700 mt-0.5 opacity-80">Protect your business from digital threats</p>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
@@ -561,7 +564,8 @@ export default function Services() {
               <div className="bg-gradient-to-br from-[#e7c6ff] to-[#caf0f8] p-5">
                 <div className="flex items-center gap-2 mb-1">
                   <Cpu className="w-5 h-5 text-gray-900" />
-                  <h3 className="font-semibold text-gray-900">AI & Automation</h3>
+                  <h3 className="font-semibold text-gray-900">AI &amp; Automation</h3>
+                <p className="text-xs text-gray-700 mt-0.5 opacity-80">Save time with smart, automated workflows</p>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
@@ -590,6 +594,7 @@ export default function Services() {
                 <div className="flex items-center gap-2 mb-1">
                   <Lightbulb className="w-5 h-5 text-gray-900" />
                   <h3 className="font-semibold text-gray-900">Digital Strategy</h3>
+                <p className="text-xs text-gray-700 mt-0.5 opacity-80">A clear roadmap for your online growth</p>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
@@ -618,6 +623,7 @@ export default function Services() {
                 <div className="flex items-center gap-2 mb-1">
                   <FileText className="w-5 h-5 text-gray-900" />
                   <h3 className="font-semibold text-gray-900">Business Registration</h3>
+                <p className="text-xs text-gray-700 mt-0.5 opacity-80">Get your business officially registered with CIPC</p>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
@@ -646,6 +652,7 @@ export default function Services() {
                 <div className="flex items-center gap-2 mb-1">
                   <Globe className="w-5 h-5 text-gray-900" />
                   <h3 className="font-semibold text-gray-900">Domain Registration</h3>
+                <p className="text-xs text-gray-700 mt-0.5 opacity-80">Secure your .co.za or .com address today</p>
                 </div>
               </div>
               <div className="divide-y divide-gray-100">
