@@ -64,6 +64,9 @@ export default function Contact() {
       {/* Header */}
       <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-full mb-4">
+            <span className="text-xs sm:text-sm font-medium">We typically respond within one business day</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Get in Touch</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Ready to start your journey or support our mission? We'd love to hear from you.
@@ -201,9 +204,17 @@ export default function Contact() {
                 <p className="text-gray-700 text-sm mb-3 sm:mb-4">
                   Be part of the movement to bridge the digital divide and empower the next generation of innovators.
                 </p>
-                <p className="text-sm font-medium">
+                <p className="text-sm font-medium mb-5">
                   Together, we can create lasting change.
                 </p>
+                <a
+                  href="https://wa.me/27730286401"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95"
+                >
+                  WhatsApp Us
+                </a>
               </div>
             </div>
           </div>
