@@ -1,7 +1,10 @@
 import { Link } from 'react-router';
 import { Target, Heart, Lightbulb } from 'lucide-react';
+import { useSEO } from '../components/useSEO';
 
 export default function About() {
+  useSEO({ title: 'About Us – Our Mission & Founder', description: `Learn about Lesedi NovaTech Hub's mission to bridge the digital divide for rural South African youth, our values, and the story behind our founder Lesedi Siyaya.`, path: '/about' });
+
   return (
     <div>
       {/* Header */}
