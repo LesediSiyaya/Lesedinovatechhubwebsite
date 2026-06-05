@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { Code, Shield, Cpu, Users, Sparkles, Quote } from 'lucide-react';
+import { useSEO } from '../components/useSEO';
 
 const testimonials = [
   {
@@ -23,6 +24,8 @@ const testimonials = [
 ];
 
 export default function Home() {
+  useSEO({ title: 'Digital Education & Tech Services for South African Youth', description: `Lesedi NovaTech Hub empowers rural youth in South Africa with free IT programs, coding, cybersecurity training, and professional digital services. Join us and shape your digital future.`, path: '/' });
+
   return (
     <div>
       {/* Hero Section */}
