@@ -81,7 +81,7 @@ export default function About() {
 
       {/* Founder Story */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">Meet Our Founder</h2>
             <p className="text-gray-600">
@@ -89,23 +89,30 @@ export default function About() {
             </p>
           </div>
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="h-56 sm:h-72 overflow-hidden">
-              <img
-                src="/founder.png"
-                alt="Lesedi Siyaya, Founder of Lesedi NovaTech Hub"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
-            <div className="p-8 sm:p-12">
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
-              </p>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                Growing up witnessing the disparities between rural and urban communities, she recognized that access to technology and digital literacy could be the key to unlocking potential and creating sustainable change.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Through the Hub, the vision is to empower young people not just with technical skills, but with the confidence and knowledge to pursue careers in technology, start their own ventures, and bring innovation back to their communities.
-              </p>
+            <div className="grid md:grid-cols-2">
+              {/* Portrait photo */}
+              <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[480px] overflow-hidden">
+                <img
+                  src="/founder.jpg"
+                  alt="Lesedi Siyaya, Founder of Lesedi NovaTech Hub"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Bio */}
+              <div className="p-8 sm:p-12 flex flex-col justify-center">
+                <p className="text-xs font-semibold tracking-widest text-[#c77dff] uppercase mb-2">Meet Our Founder</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">Lesedi Siyaya</h3>
+                <p className="text-sm font-medium text-gray-500 mb-6">Founder &amp; Director, Lesedi NovaTech Hub</p>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
+                </p>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Growing up witnessing the disparities between rural and urban communities, she recognised that access to technology and digital literacy could be the key to unlocking potential and creating sustainable change.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Through the Hub, her vision is to empower young people not just with technical skills, but with the confidence to pursue careers in technology, start their own ventures, and bring innovation back to their communities.
+                </p>
+              </div>
             </div>
           </div>
         </div>
