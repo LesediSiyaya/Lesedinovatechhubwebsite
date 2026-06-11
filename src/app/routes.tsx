@@ -8,6 +8,7 @@ import Impact from "./pages/Impact";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
+import NotFound from "./pages/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
       { path: "contact", Component: Contact },
       { path: "faq", Component: FAQ },
       { path: "privacy", Component: Privacy },
-      { path: "*", Component: Home },
+      { path: "*", Component: NotFound },
     ],
   },
 ]);
