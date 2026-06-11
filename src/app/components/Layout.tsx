@@ -4,6 +4,9 @@ import { Sparkles, Menu, X, Instagram, ChevronUp, CalendarDays } from 'lucide-re
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showConsent, setShowConsent] = useState(() => {
+    try { return !localStorage.getItem('lesedi_popia_consent'); } catch { return true; }
+  });
   const [whatsappOpen, setWhatsappOpen] = useState(true);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [showConsult, setShowConsult] = useState(false);
@@ -21,6 +24,11 @@ export default function Layout() {
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
+
+  const acceptConsent = () => {
+    try { localStorage.setItem('lesedi_popia_consent', '1'); } catch {}
+    setShowConsent(false);
+  };
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -211,6 +219,34 @@ export default function Layout() {
         </button>
       </div>
 
+
+      {/* POPIA Consent Banner */}
+      {showConsent && (
+        <div className="fixed bottom-0 inset-x-0 z-50 bg-gray-900 text-white px-4 py-4 sm:py-3 shadow-2xl">
+          <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
+            <p className="text-xs sm:text-sm text-gray-300 flex-1 leading-relaxed">
+              We collect information submitted through our contact form to respond to your enquiry, in accordance with South Africa's{' '}
+              <span className="font-medium text-white">POPIA (Protection of Personal Information Act)</span>.
+              By continuing to use this site, you acknowledge our{' '}
+              <a href="/privacy" className="underline hover:text-[#ffc8dd] transition-colors">Privacy Policy</a>.
+            </p>
+            <div className="flex gap-3 flex-shrink-0">
+              <button
+                onClick={acceptConsent}
+                className="px-5 py-2 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 text-xs sm:text-sm font-semibold rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation"
+              >
+                I understand
+              </button>
+              <a
+                href="/privacy"
+                className="px-5 py-2 bg-gray-700 hover:bg-gray-600 text-white text-xs sm:text-sm font-medium rounded-lg transition-all touch-manipulation"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
