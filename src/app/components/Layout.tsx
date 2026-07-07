@@ -14,6 +14,9 @@ export default function Layout() {
   const [showConsult, setShowConsult] = useState(false);
   const location = useLocation();
 
+  // Scroll to top on every page navigation
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       setShowBackToTop(window.scrollY > 400);
