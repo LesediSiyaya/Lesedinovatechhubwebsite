@@ -93,7 +93,7 @@ export default function Programs() {
 
       {/* Visual Banner */}
       <section className="relative h-52 sm:h-64 overflow-hidden">
-        <img
+        <img loading="lazy" decoding="async"
           src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80"
           alt="Students learning digital skills together"
           className="w-full h-full object-cover object-center"
