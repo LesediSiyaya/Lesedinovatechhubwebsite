@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Users, Sparkles, Heart, Clock, CheckCircle } from 'lucide-react';
+import { Code, Shield, Cpu, Users, Sparkles, Heart, Clock, CheckCircle, MessageCircle } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 
 interface Program {
@@ -127,15 +127,26 @@ export default function Programs() {
                     </li>
                   ))}
                 </ul>
-                <div className="border-t border-gray-100 pt-4 mt-auto space-y-1.5">
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <Clock className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" />
-                    <span><span className="font-medium text-gray-700">Duration:</span> {prog.duration}</span>
+                <div className="border-t border-gray-100 pt-4 mt-auto space-y-3">
+                  <div className="space-y-1.5">
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <Clock className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" />
+                      <span><span className="font-medium text-gray-700">Duration:</span> {prog.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-500">
+                      <CheckCircle className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" />
+                      <span><span className="font-medium text-gray-700">Level:</span> {prog.level}</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs text-gray-500">
-                    <CheckCircle className="w-3.5 h-3.5 flex-shrink-0 text-gray-400" />
-                    <span><span className="font-medium text-gray-700">Level:</span> {prog.level}</span>
-                  </div>
+                  <a
+                    href={`https://wa.me/27730286401?text=Hi! I'd like to apply for the ${encodeURIComponent(prog.title)} program.`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-medium rounded-lg transition-all transform hover:scale-[1.02] active:scale-95 touch-manipulation"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Apply on WhatsApp
+                  </a>
                 </div>
               </div>
             ))}
