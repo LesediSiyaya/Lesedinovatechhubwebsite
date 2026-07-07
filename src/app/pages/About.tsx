@@ -39,7 +39,7 @@ export default function About() {
 
             <div className="rounded-2xl shadow-lg overflow-hidden">
               <div className="h-48 sm:h-52 overflow-hidden">
-                <img
+                <img loading="lazy" decoding="async"
                   src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80"
                   alt="Young people engaged in technology and community"
                   className="w-full h-full object-cover object-center"
@@ -92,7 +92,7 @@ export default function About() {
             <div className="grid md:grid-cols-2">
               {/* Portrait photo */}
               <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[480px] overflow-hidden">
-                <img
+                <img loading="lazy" decoding="async"
                   src="/founder.jpg"
                   alt="Lesedi Siyaya, Founder of Lesedi NovaTech Hub"
                   className="w-full h-full object-cover object-top"
