@@ -200,6 +200,55 @@ export default function Home() {
       {/* Impact Stats — animated counters */}
       <AnimatedStatsSection />
 
+      {/* Meet the Founder */}
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-10 sm:gap-16">
+
+            {/* Photo */}
+            <div className="flex-shrink-0">
+              <div className="relative">
+                <div className="absolute -inset-3 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-3xl opacity-60 blur-sm" />
+                <img
+                  src="/founder.jpg"
+                  alt="Lesedi Siyaya, Founder of Lesedi NovaTech Hub"
+                  loading="lazy"
+                  className="relative w-48 h-48 sm:w-60 sm:h-60 object-cover rounded-2xl shadow-xl"
+                />
+              </div>
+            </div>
+
+            {/* Quote + bio */}
+            <div className="flex-1 text-center md:text-left">
+              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#caf0f8] to-[#e7c6ff] rounded-full text-xs font-semibold text-gray-700 uppercase tracking-widest mb-5">
+                Meet the Founder
+              </div>
+              <blockquote className="text-xl sm:text-2xl font-semibold text-gray-900 leading-snug mb-6">
+                <span className="text-[#ffc8dd] text-4xl font-serif leading-none mr-1">"</span>
+                My purpose isn't just to succeed — it's to create opportunities, inspire others through my actions, and leave every place better than I found it.
+                <span className="text-[#ffc8dd] text-4xl font-serif leading-none ml-1">"</span>
+              </blockquote>
+              <div className="flex items-center gap-3 justify-center md:justify-start">
+                <div className="w-8 h-px bg-[#ffc8dd]" />
+                <div>
+                  <p className="font-bold text-gray-900 text-sm">Lesedi Siyaya</p>
+                  <p className="text-xs text-gray-500">Founder · Lesedi NovaTech Hub</p>
+                </div>
+              </div>
+              <div className="mt-6">
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-[#ffc8dd] hover:decoration-2 transition-all"
+                >
+                  Read Lesedi's full story →
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Quick Overview - Programs */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
