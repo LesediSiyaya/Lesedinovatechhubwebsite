@@ -4,6 +4,8 @@ import { Sparkles, Menu, X, Instagram, ChevronUp, CalendarDays } from 'lucide-re
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterDone, setNewsletterDone] = useState(false);
   const [showConsent, setShowConsent] = useState(() => {
     try { return !localStorage.getItem('lesedi_popia_consent'); } catch { return true; }
   });
@@ -24,6 +26,18 @@ export default function Layout() {
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
+
+  const handleNewsletter = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    // Open a pre-filled email so Lesedi receives the subscription request
+    window.open(
+      `mailto:lesnovatechub@gmail.com?subject=Newsletter Subscription&body=Please add me to your mailing list: ${encodeURIComponent(newsletterEmail)}`,
+      '_blank'
+    );
+    setNewsletterDone(true);
+    setNewsletterEmail('');
+  };
 
   const acceptConsent = () => {
     try { localStorage.setItem('lesedi_popia_consent', '1'); } catch {}
@@ -169,6 +183,34 @@ export default function Layout() {
               </div>
             </div>
           </div>
+          {/* Newsletter signup */}
+          <div className="border-t border-gray-800 pt-8 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <div className="flex-1">
+              <p className="text-sm font-semibold text-white mb-1">Monthly tech tips &amp; program updates</p>
+              <p className="text-xs text-gray-400">No spam. Unsubscribe any time.</p>
+            </div>
+            {newsletterDone ? (
+              <p className="text-sm text-[#ffc8dd] font-medium flex-shrink-0">✓ You're on the list — we'll be in touch!</p>
+            ) : (
+              <form onSubmit={handleNewsletter} className="flex gap-2 w-full sm:w-auto">
+                <input
+                  type="email"
+                  required
+                  placeholder="Your email address"
+                  value={newsletterEmail}
+                  onChange={(e) => setNewsletterEmail(e.target.value)}
+                  className="flex-1 sm:w-56 px-4 py-2.5 rounded-lg bg-gray-800 text-white text-sm placeholder-gray-500 border border-gray-700 focus:outline-none focus:border-[#ffc8dd] transition-colors"
+                />
+                <button
+                  type="submit"
+                  className="px-5 py-2.5 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 text-sm font-semibold rounded-lg transition-all transform hover:scale-105 active:scale-95 flex-shrink-0"
+                >
+                  Subscribe
+                </button>
+              </form>
+            )}
+          </div>
+
           <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
             <p>&copy; 2026 Lesedi NovaTech Hub. All rights reserved.</p>
             <div className="flex gap-4">
