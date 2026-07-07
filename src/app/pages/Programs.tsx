@@ -74,6 +74,16 @@ const programs: Program[] = [
     duration: 'Ongoing (3-month cycles)',
     level: 'Open to all students',
   },
+  {
+    icon: <Sparkles className="w-7 h-7 text-gray-900" />,
+    gradient: 'from-[#caf0f8] to-[#e7c6ff]',
+    dotColor: 'bg-[#e7c6ff]',
+    title: 'Social Media Marketing',
+    description: 'Learn how to build a powerful online presence and grow a business or personal brand using social media platforms.',
+    topics: ['Content Creation Strategy', 'Instagram & Facebook for Business', 'Analytics & Growth Tactics'],
+    duration: '4 weeks',
+    level: 'No experience needed',
+  },
 ];
 
 export default function Programs() {
@@ -117,7 +127,10 @@ export default function Programs() {
                 <div className={`w-14 h-14 bg-gradient-to-br ${prog.gradient} rounded-xl flex items-center justify-center mb-6`}>
                   {prog.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{prog.title}</h3>
+                <div className="flex items-start justify-between gap-2 mb-3">
+                  <h3 className="text-xl font-semibold leading-tight">{prog.title}</h3>
+                  <span className="flex-shrink-0 mt-0.5 px-2.5 py-0.5 bg-[#caf0f8] text-gray-800 text-xs font-bold rounded-full tracking-wide">FREE</span>
+                </div>
                 <p className="text-gray-600 mb-4 text-sm sm:text-base flex-1">{prog.description}</p>
                 <ul className="space-y-2 text-sm text-gray-600 mb-5">
                   {prog.topics.map((t) => (
