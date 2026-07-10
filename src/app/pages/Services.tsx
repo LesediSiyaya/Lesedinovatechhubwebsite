@@ -26,9 +26,9 @@ export default function Services() {
               { label: 'UI/UX', href: '#uiux' },
               { label: 'Branding', href: '#branding' },
               { label: 'Cybersecurity', href: '#cybersecurity' },
-              { label: 'AI & Auto', href: '#ai-automation' },
+              { label: 'AI & Automation', href: '#ai-automation' },
               { label: 'Strategy', href: '#digital-strategy' },
-              { label: 'Biz Reg', href: '#business-registration' },
+              { label: 'Business Registration', href: '#business-registration' },
               { label: 'Domain', href: '#domain' },
               { label: 'Pricing', href: '#pricing' },
             ].map(({ label, href }) => (
