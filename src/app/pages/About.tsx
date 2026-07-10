@@ -40,8 +40,8 @@ export default function About() {
             <div className="rounded-2xl shadow-lg overflow-hidden">
               <div className="h-48 sm:h-52 overflow-hidden">
                 <img loading="lazy" decoding="async"
-                  src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=900&q=80"
-                  alt="Young people engaged in technology and community"
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
+                  alt="Young people learning to code on laptops"
                   className="w-full h-full object-cover object-center"
                 />
               </div>
