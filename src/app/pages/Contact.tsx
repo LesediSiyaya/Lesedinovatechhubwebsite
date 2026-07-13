@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Phone, Sparkles } from 'lucide-react';
+import { Mail, Phone, Sparkles, MapPin } from 'lucide-react';
 import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { useSEO } from '../components/useSEO';
 
@@ -193,6 +193,17 @@ export default function Contact() {
                       <a href="tel:+27730286401" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
                         073 028 6401
                       </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-[#ffc8dd] rounded-lg flex items-center justify-center flex-shrink-0">
+                      <MapPin className="w-5 h-5 text-gray-900" />
+                    </div>
+                    <div>
+                      <p className="font-medium mb-1">Location</p>
+                      <p className="text-gray-600 text-sm">ERF 547 Maluti Township</p>
+                      <p className="text-gray-600 text-sm">Matatiele, 4740</p>
+                      <p className="text-gray-600 text-sm">Eastern Cape, South Africa</p>
                     </div>
                   </div>
                 </div>
