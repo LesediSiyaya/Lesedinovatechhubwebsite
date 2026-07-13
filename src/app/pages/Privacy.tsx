@@ -10,7 +10,7 @@ export default function Privacy() {
       <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-gray-500 text-sm">Last updated: May 2026</p>
+          <p className="text-gray-500 text-sm">Last updated: July 2026</p>
         </div>
       </section>
 
@@ -22,7 +22,7 @@ export default function Privacy() {
             <p className="text-gray-600 leading-relaxed">
               NovaTech Hub ("we", "our", or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, and safeguard the information you
-              provide when you visit our website (<a href="https://lesnovatechhub.vercel.app" className="text-[#e7c6ff] underline">lesnovatechhub.vercel.app</a>) or
+              provide when you visit our website (<a href="https://novatechhub.pages.dev" className="text-[#e7c6ff] underline">novatechhub.pages.dev</a>) or
               contact us about our services and programs.
             </p>
           </div>
@@ -40,7 +40,10 @@ export default function Privacy() {
                 <li>Program application details such as your location and areas of interest.</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mt-3">
-                We do not automatically collect personal data through cookies, analytics trackers, or similar technologies beyond what your browser or the hosting platform (Vercel) may log as standard web traffic.
+                We also collect anonymised usage data through Google Analytics (GA4) to understand how visitors use our website. This data does not identify you personally and is used solely to improve the website experience. You can opt out of Google Analytics tracking via your browser settings or a browser extension.
+              </p>
+              <p className="text-gray-600 leading-relaxed mt-3">
+                Standard technical data such as IP addresses and page visit logs may also be collected automatically by our hosting provider, Cloudflare Pages, as part of normal web traffic processing.
               </p>
             </div>
 
@@ -54,6 +57,7 @@ export default function Privacy() {
                 <li>Process and follow up on program applications.</li>
                 <li>Send you a quote, invoice, or project update related to work you have engaged us for.</li>
                 <li>Improve our services based on feedback you share.</li>
+                <li>Analyse anonymous website usage to improve the site experience.</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mt-3">
                 We will not add you to a mailing list or send you unsolicited marketing communications without your explicit consent.
@@ -63,14 +67,14 @@ export default function Privacy() {
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">3. Sharing of Your Information</h2>
               <p className="text-gray-600 leading-relaxed">
-                We do not sell, trade, or rent your personal information to third parties. Your details are kept within our internal operations and will not be disclosed to outside parties except where required by law or with your consent.
+                We do not sell, trade, or rent your personal information to third parties. Your details are kept within our internal operations and will not be disclosed to outside parties except where required by law or with your consent. Anonymous usage statistics collected through Google Analytics may be processed by Google in accordance with their privacy policy.
               </p>
             </div>
 
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">4. Data Security</h2>
               <p className="text-gray-600 leading-relaxed">
-                We take reasonable steps to protect the information you share with us. Communications via WhatsApp and email are subject to the security practices of those platforms. We do not store sensitive financial information such as banking or card details.
+                We take reasonable steps to protect the information you share with us. Our website is hosted on Cloudflare Pages, which provides industry-standard security including HTTPS encryption for all data in transit. Communications via WhatsApp and email are subject to the security practices of those platforms. We do not store sensitive financial information such as banking or card details.
               </p>
             </div>
 
@@ -89,7 +93,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-3">7. Your Rights</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">7. Your Rights (POPIA)</h2>
               <p className="text-gray-600 leading-relaxed mb-3">
                 In line with the Protection of Personal Information Act (POPIA) of South Africa, you have the right to:
               </p>
@@ -97,6 +101,7 @@ export default function Privacy() {
                 <li>Request access to the personal information we hold about you.</li>
                 <li>Ask us to correct or delete your information.</li>
                 <li>Object to the processing of your personal information.</li>
+                <li>Lodge a complaint with the Information Regulator of South Africa if you believe your rights have been violated.</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mt-3">
                 To exercise any of these rights, contact us using the details below.
