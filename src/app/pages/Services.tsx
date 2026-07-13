@@ -3,7 +3,7 @@ import { Code, Shield, Cpu, Target, Sparkles, Lightbulb, CheckCircle, Tag, Globe
 import { useSEO } from '../components/useSEO';
 
 export default function Services() {
-  useSEO({ title: 'Professional Digital Services – Web Design, UI/UX & AI', description: `Lesedi NovaTech Hub offers affordable web design, mobile app development, UI/UX design, cybersecurity consulting, digital marketing, and AI solutions for businesses.`, path: '/services' });
+  useSEO({ title: 'Professional Digital Services – Web Design, UI/UX & AI', description: `NovaTech Hub offers affordable web design, mobile app development, UI/UX design, cybersecurity consulting, digital marketing, and AI solutions for businesses.`, path: '/services' });
 
   return (
     <div>
