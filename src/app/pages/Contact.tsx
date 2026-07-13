@@ -56,7 +56,7 @@ export default function Contact() {
       setIsSubmitting(false);
     }
   };
-  useSEO({ title: 'Contact Us – Get in Touch', description: `Contact Lesedi NovaTech Hub to join a program, request a service quote, or learn more. Reach us by email at lesnovatechub@gmail.com or WhatsApp 073 028 6401.`, path: '/contact' });
+  useSEO({ title: 'Contact Us – Get in Touch', description: `Contact NovaTech Hub to join a program, request a service quote, or learn more. Reach us by email at lesnovatechub@gmail.com or WhatsApp 073 028 6401.`, path: '/contact' });
 
 
   return (
