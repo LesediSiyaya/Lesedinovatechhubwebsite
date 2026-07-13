@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { useSEO } from '../components/useSEO';
 
 export default function Privacy() {
-  useSEO({ title: 'Privacy Policy', description: `Read the Lesedi NovaTech Hub privacy policy to understand how we collect, use, and protect your personal information on our website and services.`, path: '/privacy' });
+  useSEO({ title: 'Privacy Policy', description: `Read the NovaTech Hub privacy policy to understand how we collect, use, and protect your personal information on our website and services.`, path: '/privacy' });
 
   return (
     <div>
@@ -20,7 +20,7 @@ export default function Privacy() {
 
           <div className="mb-8">
             <p className="text-gray-600 leading-relaxed">
-              Lesedi NovaTech Hub ("we", "our", or "us") is committed to protecting your privacy.
+              NovaTech Hub ("we", "our", or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, and safeguard the information you
               provide when you visit our website (<a href="https://lesnovatechhub.vercel.app" className="text-[#e7c6ff] underline">lesnovatechhub.vercel.app</a>) or
               contact us about our services and programs.
