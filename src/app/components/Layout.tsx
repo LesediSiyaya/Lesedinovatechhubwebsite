@@ -77,7 +77,7 @@ export default function Layout() {
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
               <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffc8dd]" />
-              <span className="font-semibold text-lg sm:text-xl">Lesedi NovaTech Hub</span>
+              <span className="font-semibold text-lg sm:text-xl">NovaTech Hub</span>
             </Link>
 
             {/* Desktop Menu */}
@@ -151,7 +151,7 @@ export default function Layout() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-6 h-6 text-[#ffc8dd]" />
-                <span className="font-semibold text-lg">Lesedi NovaTech Hub</span>
+                <span className="font-semibold text-lg">NovaTech Hub</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Empowering rural youth through technology education and digital literacy.
@@ -221,7 +221,7 @@ export default function Layout() {
           </div>
 
           <div className="border-t border-gray-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-gray-400">
-            <p>&copy; 2026 Lesedi NovaTech Hub. All rights reserved.</p>
+            <p>&copy; 2026 NovaTech Hub. All rights reserved.</p>
             <div className="flex gap-4">
               <Link to="/faq" className="hover:text-[#ffc8dd] transition-colors">FAQ</Link>
               <Link to="/privacy" className="hover:text-[#ffc8dd] transition-colors">Privacy Policy</Link>
