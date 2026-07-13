@@ -180,6 +180,9 @@ export default function Layout() {
                 <a href="tel:+27730286401" className="block hover:text-[#ffc8dd] transition-colors">
                   073 028 6401
                 </a>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  ERF 547 Maluti Township<br />Matatiele, 4740<br />Eastern Cape, South Africa
+                </p>
                 <a
                   href="https://www.instagram.com/lesedinovatech_hub"
                   target="_blank"
