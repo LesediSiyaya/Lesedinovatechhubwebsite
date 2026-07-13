@@ -3,7 +3,7 @@ import { Target, Heart, Lightbulb } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 
 export default function About() {
-  useSEO({ title: 'About Us – Our Mission & Founder', description: `Learn about Lesedi NovaTech Hub's mission to bridge the digital divide for rural South African youth, our values, and the story behind our founder Lesedi Siyaya.`, path: '/about' });
+  useSEO({ title: 'About Us – Our Mission & Founder', description: `Learn about NovaTech Hub's mission to bridge the digital divide for rural South African youth, our values, and the story behind our founder Lesedi Siyaya.`, path: '/about' });
 
   return (
     <div>
@@ -94,7 +94,7 @@ export default function About() {
               <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[480px] overflow-hidden">
                 <img loading="lazy" decoding="async"
                   src="/founder.jpg"
-                  alt="Lesedi Siyaya, Founder of Lesedi NovaTech Hub"
+                  alt="Lesedi Siyaya, Founder of NovaTech Hub"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function About() {
               <div className="p-8 sm:p-12 flex flex-col justify-center">
                 <p className="text-xs font-semibold tracking-widest text-[#c77dff] uppercase mb-2">Meet Our Founder</p>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">Lesedi Siyaya</h3>
-                <p className="text-sm font-medium text-gray-500 mb-6">Founder &amp; Director, Lesedi NovaTech Hub</p>
+                <p className="text-sm font-medium text-gray-500 mb-6">Founder &amp; Director, NovaTech Hub</p>
                 <p className="text-gray-700 mb-4 leading-relaxed">
                   Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
                 </p>
@@ -127,7 +127,7 @@ export default function About() {
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold mb-3">Trusted &amp; Recognised</h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              Lesedi NovaTech Hub is backed by leading organisations committed to education, youth empowerment, and digital inclusion.
+              NovaTech Hub is backed by leading organisations committed to education, youth empowerment, and digital inclusion.
             </p>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
