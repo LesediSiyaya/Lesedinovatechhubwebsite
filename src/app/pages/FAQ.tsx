@@ -89,7 +89,7 @@ function FAQAccordion({ item, index }: { item: FAQItem; index: number }) {
 }
 
 export default function FAQ() {
-  useSEO({ title: 'FAQs – Frequently Asked Questions', description: `Find answers to common questions about Lesedi NovaTech Hub's free programs, digital services, eligibility, pricing, and how to get involved.`, path: '/faq' });
+  useSEO({ title: 'FAQs – Frequently Asked Questions', description: `Find answers to common questions about NovaTech Hub's free programs, digital services, eligibility, pricing, and how to get involved.`, path: '/faq' });
 
   return (
     <div>
