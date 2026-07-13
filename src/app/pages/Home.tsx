@@ -6,19 +6,19 @@ import { useSEO } from '../components/useSEO';
 const testimonials = [
   {
     quote:
-      'Lesedi NovaTech Hub creates an inspiring environment for young people to learn and grow through technology. Initiatives like this are important for bridging the digital gap in our communities and preparing youth for future opportunities.',
+      'NovaTech Hub creates an inspiring environment for young people to learn and grow through technology. Initiatives like this are important for bridging the digital gap in our communities and preparing youth for future opportunities.',
     name: 'Community Supporter',
     color: 'from-[#caf0f8] to-[#e7c6ff]',
   },
   {
     quote:
-      'What stands out about Lesedi NovaTech Hub is its vision to make technology education more accessible to rural youth. The focus on coding, AI, and digital skills has the potential to positively impact many young lives.',
+      'What stands out about NovaTech Hub is its vision to make technology education more accessible to rural youth. The focus on coding, AI, and digital skills has the potential to positively impact many young lives.',
     name: 'Local Youth Advocate',
     color: 'from-[#e7c6ff] to-[#ffc8dd]',
   },
   {
     quote:
-      'Seeing a youth-led initiative focused on innovation and community empowerment is truly motivating. Lesedi NovaTech Hub represents the kind of forward-thinking solutions needed to help young people succeed in a digital world.',
+      'Seeing a youth-led initiative focused on innovation and community empowerment is truly motivating. NovaTech Hub represents the kind of forward-thinking solutions needed to help young people succeed in a digital world.',
     name: 'Education & Community Member',
     color: 'from-[#ffc8dd] to-[#caf0f8]',
   },
@@ -94,7 +94,7 @@ function AnimatedStatsSection() {
 }
 
 export default function Home() {
-  useSEO({ title: 'Digital Education & Tech Services for South African Youth', description: `Lesedi NovaTech Hub empowers rural youth in South Africa with free IT programs, coding, cybersecurity training, and professional digital services. Join us and shape your digital future.`, path: '/' });
+  useSEO({ title: 'Digital Education & Tech Services for South African Youth', description: `NovaTech Hub empowers rural youth in South Africa with free IT programs, coding, cybersecurity training, and professional digital services. Join us and shape your digital future.`, path: '/' });
 
   return (
     <div>
@@ -113,7 +113,7 @@ export default function Home() {
               <span className="text-xs sm:text-sm font-medium">Digital Empowerment for All · South Africa</span>
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#030213] via-[#e7c6ff] to-[#ffc8dd] bg-clip-text text-transparent px-2">
-              Lesedi NovaTech Hub
+              NovaTech Hub
             </h1>
             <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-4 sm:mb-8 px-2">
               Igniting the next generation of innovators
@@ -211,7 +211,7 @@ export default function Home() {
                 <div className="absolute -inset-3 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-3xl opacity-60 blur-sm" />
                 <img
                   src="/founder.jpg"
-                  alt="Lesedi Siyaya, Founder of Lesedi NovaTech Hub"
+                  alt="Lesedi Siyaya, Founder of NovaTech Hub"
                   loading="lazy"
                   className="relative w-48 h-48 sm:w-60 sm:h-60 object-cover rounded-2xl shadow-xl"
                 />
@@ -232,7 +232,7 @@ export default function Home() {
                 <div className="w-8 h-px bg-[#ffc8dd]" />
                 <div>
                   <p className="font-bold text-gray-900 text-sm">Lesedi Siyaya</p>
-                  <p className="text-xs text-gray-500">Founder · Lesedi NovaTech Hub</p>
+                  <p className="text-xs text-gray-500">Founder · NovaTech Hub</p>
                 </div>
               </div>
               <div className="mt-6">
