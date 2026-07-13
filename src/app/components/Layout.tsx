@@ -9,12 +9,14 @@ export default function Layout() {
   const [showConsent, setShowConsent] = useState(() => {
     try { return !localStorage.getItem('lesedi_popia_consent'); } catch { return true; }
   });
-  const [whatsappOpen, setWhatsappOpen] = useState(true);
+  const [whatsappOpen, setWhatsappOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [showConsult, setShowConsult] = useState(false);
+  const [consultDismissed, setConsultDismissed] = useState(() => {
+    try { return !!sessionStorage.getItem('consult_dismissed'); } catch { return false; }
+  });
   const location = useLocation();
 
-  // Scroll to top on every page navigation
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [location.pathname]);
 
   useEffect(() => {
@@ -33,7 +35,6 @@ export default function Layout() {
   const handleNewsletter = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newsletterEmail) return;
-    // Open a pre-filled email so Lesedi receives the subscription request
     window.open(
       `mailto:lesnovatechub@gmail.com?subject=Newsletter Subscription&body=Please add me to your mailing list: ${encodeURIComponent(newsletterEmail)}`,
       '_blank'
@@ -45,6 +46,11 @@ export default function Layout() {
   const acceptConsent = () => {
     try { localStorage.setItem('lesedi_popia_consent', '1'); } catch {}
     setShowConsent(false);
+  };
+
+  const dismissConsult = () => {
+    try { sessionStorage.setItem('consult_dismissed', '1'); } catch {}
+    setConsultDismissed(true);
   };
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -116,7 +122,7 @@ export default function Layout() {
             </button>
           </div>
 
-          {/* Mobile Menu — animated */}
+          {/* Mobile Menu */}
           <div
             className={`md:hidden border-t border-gray-100 overflow-hidden transition-all duration-300 ease-in-out ${
               menuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
@@ -195,6 +201,7 @@ export default function Layout() {
               </div>
             </div>
           </div>
+
           {/* Newsletter signup */}
           <div className="border-t border-gray-800 pt-8 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <div className="flex-1">
@@ -233,26 +240,37 @@ export default function Layout() {
         </div>
       </footer>
 
-
-      {/* Book a Free Consultation — floating pill */}
-      <div
-        className={`fixed left-1/2 -translate-x-1/2 z-40 transition-all duration-500 ${
-          showConsent ? 'bottom-24 sm:bottom-20' : 'bottom-6'
-        } ${
-          showConsult && location.pathname !== '/contact'
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 translate-y-6 pointer-events-none'
-        }`}
-      >
-        <Link
-          to="/contact"
-          className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-[#e7c6ff] via-[#ffc8dd] to-[#caf0f8] text-gray-900 font-semibold text-sm rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95 whitespace-nowrap"
+      {/* Book a Free Consultation — dismissible floating pill */}
+      {!consultDismissed && (
+        <div
+          className={`fixed left-1/2 -translate-x-1/2 z-40 transition-all duration-500 ${
+            showConsent ? 'bottom-24 sm:bottom-20' : 'bottom-6'
+          } ${
+            showConsult && location.pathname !== '/contact'
+              ? 'opacity-100 translate-y-0 pointer-events-auto'
+              : 'opacity-0 translate-y-6 pointer-events-none'
+          }`}
         >
-          <CalendarDays className="w-4 h-4 flex-shrink-0" />
-          Book a Free Consultation
-        </Link>
-      </div>
-      {/* WhatsApp Floating Button */}
+          <div className="flex items-center gap-1 bg-gradient-to-r from-[#e7c6ff] via-[#ffc8dd] to-[#caf0f8] rounded-full shadow-lg">
+            <Link
+              to="/contact"
+              className="flex items-center gap-2 pl-5 pr-3 py-3 text-gray-900 font-semibold text-sm hover:opacity-80 transition-opacity whitespace-nowrap"
+            >
+              <CalendarDays className="w-4 h-4 flex-shrink-0" />
+              Book a Free Consultation
+            </Link>
+            <button
+              onClick={dismissConsult}
+              className="flex items-center justify-center w-7 h-7 mr-1.5 rounded-full hover:bg-black/10 transition-colors text-gray-700"
+              aria-label="Dismiss"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* WhatsApp Floating Button — collapsed by default, tap to expand */}
       <div className={`fixed ${showConsent ? 'bottom-24 sm:bottom-20' : 'bottom-6'} right-6 z-50 flex flex-col items-end gap-2 transition-all duration-300`}>
         {whatsappOpen && (
           <a
@@ -275,8 +293,7 @@ export default function Layout() {
         </button>
       </div>
 
-
-      {/* POPIA Consent Banner */}
+      {/* POPIA Consent Banner — dismissible */}
       {showConsent && (
         <div className="fixed bottom-0 inset-x-0 z-50 bg-gray-900 text-white px-4 py-4 sm:py-3 shadow-2xl">
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
@@ -286,7 +303,7 @@ export default function Layout() {
               By continuing to use this site, you acknowledge our{' '}
               <a href="/privacy" className="underline hover:text-[#ffc8dd] transition-colors">Privacy Policy</a>.
             </p>
-            <div className="flex gap-3 flex-shrink-0">
+            <div className="flex items-center gap-3 flex-shrink-0">
               <button
                 onClick={acceptConsent}
                 className="px-5 py-2 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 text-xs sm:text-sm font-semibold rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation"
@@ -299,10 +316,18 @@ export default function Layout() {
               >
                 Learn more
               </a>
+              <button
+                onClick={acceptConsent}
+                className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-700 text-gray-400 hover:text-white transition-colors touch-manipulation"
+                aria-label="Close"
+              >
+                <X className="w-4 h-4" />
+              </button>
             </div>
           </div>
         </div>
       )}
+
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
