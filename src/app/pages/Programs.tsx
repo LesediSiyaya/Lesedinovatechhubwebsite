@@ -94,9 +94,12 @@ export default function Programs() {
       {/* Header */}
       <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#caf0f8] rounded-full mb-5">
+            <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">100% Free · No Cost Ever · No Exceptions</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Programs</h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive learning pathways designed to equip youth with essential digital skills
+            Comprehensive learning pathways designed to equip youth with essential digital skills — always free, because opportunity should never carry a price tag.
           </p>
         </div>
       </section>
@@ -112,6 +115,24 @@ export default function Programs() {
           <p className="text-white text-lg sm:text-xl font-semibold leading-relaxed max-w-sm sm:max-w-md">
             Free programs designed for youth who are ready to shape their digital future.
           </p>
+        </div>
+      </section>
+
+      {/* Why Free */}
+      <section className="bg-gray-900 py-7 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
+          <div className="flex-1">
+            <p className="text-white font-semibold text-lg mb-1">How are these programs free?</p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              NovaTech Ignite earns revenue through professional digital services — web design, branding, and tech consulting for businesses. That income funds these programs so young people in underserved communities never have to pay to learn.
+            </p>
+          </div>
+          <Link
+            to="/services"
+            className="flex-shrink-0 px-5 py-2.5 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 text-sm font-medium rounded-lg transition-all"
+          >
+            See our services →
+          </Link>
         </div>
       </section>
 
@@ -179,7 +200,7 @@ export default function Programs() {
           <div className="grid sm:grid-cols-3 gap-6">
             {[
               { step: '01', title: 'Choose a Program', desc: 'Pick the program that interests you most from the list above — or ask us which one suits you best.', color: 'bg-[#caf0f8]' },
-              { step: '02', title: 'Get in Touch', desc: 'WhatsApp us on +27 73 028 6401 or email lesnovatechub@gmail.com with your name, location, and chosen program.', color: 'bg-[#e7c6ff]' },
+              { step: '02', title: 'Get in Touch', desc: 'WhatsApp us on +27 73 028 6401 or use the Apply on WhatsApp button on the program card above — send your name, location, and chosen program.', color: 'bg-[#e7c6ff]' },
               { step: '03', title: 'Start Learning', desc: "We'll confirm your spot and share details about the schedule, online link, and what to prepare.", color: 'bg-[#ffc8dd]' },
             ].map(({ step, title, desc, color }) => (
               <div key={step} className="text-center px-4">
