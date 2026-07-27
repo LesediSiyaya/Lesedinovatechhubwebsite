@@ -17,6 +17,26 @@ export default function Services() {
         </div>
       </section>
 
+
+      {/* Mission Impact Banner */}
+      <section className="bg-gray-900 py-5 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-start sm:items-center gap-3">
+            <div className="w-2 h-2 mt-1.5 sm:mt-0 bg-[#ffc8dd] rounded-full flex-shrink-0" />
+            <p className="text-white text-sm sm:text-base">
+              <span className="font-semibold">Every service you commission funds free youth education.</span>{' '}
+              <span className="text-gray-400">Our professional services are how we keep all community programs 100% free for young people across South Africa.</span>
+            </p>
+          </div>
+          <Link
+            to="/programs"
+            className="flex-shrink-0 text-[#ffc8dd] text-sm font-medium hover:underline whitespace-nowrap"
+          >
+            See free programs →
+          </Link>
+        </div>
+      </section>
+
       {/* Quick Jump Nav */}
       <section className="sticky top-16 z-40 bg-white border-b border-gray-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
