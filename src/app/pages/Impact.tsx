@@ -3,7 +3,7 @@ import { Users, Heart, Target, Lightbulb } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 
 export default function Impact() {
-  useSEO({ title: 'Our Impact – Transforming Youth Through Technology', description: `See the real impact NovaTech Hub is making in rural South Africa — youth empowered, communities connected, and futures shaped through technology education.`, path: '/impact' });
+  useSEO({ title: 'Our Impact – Transforming Youth Through Technology', description: `See the real impact NovaTech Ignite is making in rural South Africa — youth empowered, communities connected, and futures shaped through technology education.`, path: '/impact' });
 
   return (
     <div>
@@ -26,7 +26,7 @@ export default function Impact() {
           <p className="text-center text-gray-400 text-sm mb-6 uppercase tracking-wider font-medium">Where We Are Today</p>
           <div className="flex items-center justify-center gap-0 divide-x divide-gray-700">
             <div className="flex-1 text-center px-4">
-              <p className="text-3xl sm:text-4xl font-bold text-[#ffc8dd]">10+</p>
+              <p className="text-3xl sm:text-4xl font-bold text-[#ffc8dd]">127+</p>
               <p className="text-gray-400 text-xs sm:text-sm mt-1">Students Trained</p>
             </div>
             <div className="flex-1 text-center px-4">
