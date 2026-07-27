@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Target, Heart, Lightbulb } from 'lucide-react';
+import { Target, Heart, Lightbulb, Sparkles, Users } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 
 export default function About() {
@@ -115,6 +115,49 @@ export default function About() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our Model */}
+      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">One Mission. Two Sides.</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              NovaTech Ignite runs on a deliberate model: revenue from professional services funds free community programs. Every client we serve makes another young person's education possible.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+              <div className="w-12 h-12 bg-[#caf0f8] rounded-xl flex items-center justify-center mb-5">
+                <Users className="w-6 h-6 text-gray-900" />
+              </div>
+              <p className="text-xs font-bold tracking-widest text-[#caf0f8] uppercase mb-2">For Youth & Communities</p>
+              <h3 className="text-xl font-bold text-white mb-3">Free Programs</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                Coding, cybersecurity, AI, digital literacy, mentorship — all free. No registration fees, no hidden costs. Open to any young person who wants to learn, regardless of where they come from.
+              </p>
+              <Link to="/programs" className="text-[#caf0f8] text-sm font-medium hover:underline">
+                Explore free programs →
+              </Link>
+            </div>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+              <div className="w-12 h-12 bg-[#ffc8dd] rounded-xl flex items-center justify-center mb-5">
+                <Sparkles className="w-6 h-6 text-gray-900" />
+              </div>
+              <p className="text-xs font-bold tracking-widest text-[#ffc8dd] uppercase mb-2">For Individuals & Businesses</p>
+              <h3 className="text-xl font-bold text-white mb-3">Professional Services</h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-5">
+                Web design, branding, AI solutions, cybersecurity, and digital strategy — at affordable rates. Revenue from these services directly sustains our free community programs.
+              </p>
+              <Link to="/services" className="text-[#ffc8dd] text-sm font-medium hover:underline">
+                View our services →
+              </Link>
+            </div>
+          </div>
+          <p className="text-center text-gray-500 text-sm mt-8">
+            When you hire NovaTech Ignite, you're also helping a young person access free tech education.
+          </p>
         </div>
       </section>
 
