@@ -1,5 +1,12 @@
-// ZARQ — gradient sweep (dark → lavender → pink, smooth across all 4 letters)
+// ZARQ — APPROVED colour direction (matches Figma)
+// Nav: plain dark. Hero: per-letter Z=purple-lav, A=lavender, R=lav-pink, Q=pink
 import { Code, Shield, Users, Sparkles } from "lucide-react";
+
+// Per-letter brand colours — matched to Figma screenshot
+const Z_COLOR = "#b57bee"; // purple-lavender
+const A_COLOR = "#d4aaff"; // mid lavender
+const R_COLOR = "#ecbaf0"; // lavender-pink
+const Q_COLOR = "#ffc8dd"; // brand pink
 
 export default function VioletAmber() {
   return (
@@ -8,12 +15,8 @@ export default function VioletAmber() {
         <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
           <div className="flex items-center gap-2">
             <Sparkles className="w-5 h-5" style={{ color: "#ffc8dd" }} />
-            <span
-              className="font-semibold text-xl tracking-widest bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(to right, #111827, #e7c6ff, #ffc8dd)" }}
-            >
-              ZARQ
-            </span>
+            {/* Nav: plain dark — matches Figma exactly */}
+            <span className="font-semibold text-xl tracking-widest text-gray-900">ZARQ</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-700">
             {["About", "Programs", "Services", "Impact"].map(l => (
@@ -35,12 +38,12 @@ export default function VioletAmber() {
             <span className="text-xs font-medium text-gray-800">Digital Empowerment for All · South Africa</span>
           </div>
 
-          {/* Smooth gradient sweep across all 4 letters */}
-          <h1
-            className="text-8xl md:text-9xl font-black mb-5 leading-none tracking-widest bg-clip-text text-transparent"
-            style={{ backgroundImage: "linear-gradient(to right, #111827, #caf0f8, #e7c6ff, #ffc8dd)" }}
-          >
-            ZARQ
+          {/* Per-letter colouring — matches Figma exactly */}
+          <h1 className="text-8xl md:text-9xl font-black mb-5 leading-none tracking-widest">
+            <span style={{ color: Z_COLOR }}>Z</span>
+            <span style={{ color: A_COLOR }}>A</span>
+            <span style={{ color: R_COLOR }}>R</span>
+            <span style={{ color: Q_COLOR }}>Q</span>
           </h1>
 
           <p className="text-xl text-gray-700 mb-4">Igniting the next generation of innovators</p>
