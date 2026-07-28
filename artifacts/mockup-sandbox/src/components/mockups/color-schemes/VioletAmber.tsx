@@ -1,127 +1,137 @@
+// zarq — lowercase treatment (modern, minimal, like figma/notion/slack)
+import { Code, Shield, Users, Sparkles, Quote } from "lucide-react";
+
 export default function VioletAmber() {
   return (
-    <div className="min-h-screen font-sans" style={{ background: "#0F0A1E", color: "white", fontFamily: "'Inter', sans-serif" }}>
+    <div className="min-h-screen bg-white" style={{ fontFamily: "Inter, sans-serif" }}>
 
-      {/* Nav */}
-      <nav style={{ background: "#1A0F35", borderBottom: "1px solid rgba(255,255,255,0.08)" }} className="px-8 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <div style={{ background: "#7C3AED" }} className="w-7 h-7 rounded-lg flex items-center justify-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      {/* ── Nav — exact copy of real site, name swapped ── */}
+      <nav className="bg-white/95 backdrop-blur-sm shadow-sm px-6 py-0 sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5" style={{ color: "#ffc8dd" }} />
+            <span className="font-semibold text-xl text-gray-900">zarq</span>
           </div>
-          <span className="font-bold text-lg tracking-tight" style={{ color: "white" }}>NovaTech <span style={{ color: "#F59E0B" }}>Ignite</span></span>
+          <div className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+            {["About", "Programs", "Services", "Impact"].map(l => (
+              <span key={l} className="cursor-pointer transition-colors hover:text-[#ffc8dd]">{l}</span>
+            ))}
+          </div>
+          <button className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg">
+            Contact
+          </button>
         </div>
-        <div className="hidden md:flex items-center gap-7 text-sm" style={{ color: "#C4B5FD" }}>
-          <span className="cursor-pointer hover:text-white transition-colors">About</span>
-          <span className="cursor-pointer hover:text-white transition-colors">Programs</span>
-          <span className="cursor-pointer hover:text-white transition-colors">Services</span>
-          <span className="cursor-pointer hover:text-white transition-colors">Impact</span>
-        </div>
-        <button style={{ background: "#F59E0B", color: "#1A0F35" }} className="px-5 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">
-          Contact
-        </button>
       </nav>
 
-      {/* Hero */}
-      <section className="px-8 pt-20 pb-16 text-center relative overflow-hidden">
-        {/* Glow orbs */}
-        <div style={{ position: "absolute", top: "0", left: "50%", transform: "translateX(-50%)", width: "600px", height: "300px", background: "radial-gradient(ellipse, rgba(124,58,237,0.3) 0%, transparent 70%)", pointerEvents: "none" }} />
-        
-        <div style={{ background: "rgba(245,158,11,0.12)", border: "1px solid rgba(245,158,11,0.3)", color: "#FDE68A" }} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 tracking-wider uppercase">
-          ✦ Digital Empowerment for All · South Africa
+      {/* ── Hero ── */}
+      <section className="pt-12 pb-12 px-6 relative overflow-hidden">
+        {/* Exact same glow orbs as real site */}
+        <div className="absolute inset-0 pointer-events-none" aria-hidden>
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full blur-3xl" style={{ background: "#ffc8dd", opacity: 0.12 }} />
+          <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full blur-3xl" style={{ background: "#caf0f8", opacity: 0.12 }} />
+          <div className="absolute -bottom-16 right-1/3 w-[350px] h-[350px] rounded-full blur-3xl" style={{ background: "#e7c6ff", opacity: 0.10 }} />
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-black mb-6 leading-none tracking-tight">
-          <span style={{ color: "#C4B5FD" }}>Nova</span><span style={{ color: "#7C3AED" }}>Tech</span>{" "}
-          <span style={{ color: "#F59E0B" }}>Ignite</span>
-        </h1>
+        <div className="max-w-4xl mx-auto text-center relative">
+          {/* Badge pill */}
+          <div className="inline-block px-5 py-2 rounded-full mb-5" style={{ background: "linear-gradient(to right, #caf0f8, #e7c6ff, #ffc8dd)" }}>
+            <span className="text-xs font-medium text-gray-800">Digital Empowerment for All · South Africa</span>
+          </div>
 
-        <p className="text-xl md:text-2xl mb-4 font-light" style={{ color: "#DDD6FE" }}>
-          Igniting the next generation of innovators
-        </p>
-        <p className="text-base mb-10 max-w-lg mx-auto" style={{ color: "#A78BFA" }}>
-          Bridging the digital gap for rural youth through accessible IT education, digital literacy, and emerging tech.
-        </p>
+          {/* Title — gradient on short name */}
+          <h1
+            className="text-7xl md:text-8xl font-bold mb-5 bg-clip-text text-transparent"
+            style={{ backgroundImage: "linear-gradient(to right, #030213, #e7c6ff, #ffc8dd)" }}
+          >
+            zarq
+          </h1>
 
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <button style={{ background: "#F59E0B", color: "#1A0F35" }} className="px-8 py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">
-            Join the Initiative
-          </button>
-          <button style={{ background: "#7C3AED", color: "white" }} className="px-8 py-3.5 rounded-xl font-bold text-sm hover:opacity-90 transition-opacity">
-            Explore Services
-          </button>
-          <button style={{ border: "1px solid rgba(196,181,253,0.4)", color: "#C4B5FD" }} className="px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-white/5 transition-colors">
-            Support the Mission
-          </button>
+          <p className="text-xl text-gray-700 mb-4">Igniting the next generation of innovators</p>
+          <p className="text-base text-gray-600 mb-6 max-w-2xl mx-auto">
+            Bridging the digital gap between rural and urban youth through accessible IT education, digital literacy, and emerging technologies.
+          </p>
+
+          <div className="flex flex-wrap gap-3 justify-center mb-10">
+            {["Community-driven initiative", "Youth-focused innovation hub", "Empowering the next generation"].map(t => (
+              <span key={t} className="px-4 py-2 bg-white/80 rounded-full text-xs text-gray-700 shadow-sm border border-white">{t}</span>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <button className="px-8 py-4 rounded-lg font-medium shadow-lg hover:opacity-90 transition-opacity" style={{ background: "#ffc8dd", color: "#111827" }}>
+              Join the Initiative
+            </button>
+            <button className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-lg font-medium shadow-lg transition-colors">
+              Explore Services
+            </button>
+            <button className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg font-medium transition-colors">
+              Support the Mission
+            </button>
+          </div>
         </div>
       </section>
 
-      {/* Partners */}
-      <section className="px-8 py-6" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
-        <p className="text-center text-xs uppercase tracking-widest mb-4" style={{ color: "#6D28D9" }}>Recognised & Supported By</p>
-        <div className="flex items-center justify-center gap-10 flex-wrap">
-          {["Study Trust", "First National Bank", "HP Trust"].map((p) => (
-            <div key={p} className="flex items-center gap-2">
-              <div style={{ background: "rgba(124,58,237,0.3)", border: "1px solid rgba(124,58,237,0.4)" }} className="w-8 h-8 rounded-full flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" strokeWidth="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              </div>
-              <span className="text-sm font-medium" style={{ color: "#C4B5FD" }}>{p}</span>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section style={{ background: "#160D2E" }} className="py-12 px-8">
-        <p className="text-center text-xs uppercase tracking-widest mb-8" style={{ color: "#6D28D9" }}>Our Impact — Growing Every Month</p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+      {/* ── Stats ── */}
+      <section className="py-12 px-6 bg-gray-900">
+        <p className="text-center text-gray-500 text-xs uppercase tracking-widest mb-10 font-medium">Our impact — growing every month</p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto">
           {[
-            { n: "127+", l: "Students Trained", s: "and growing", c: "#F59E0B" },
-            { n: "7", l: "Free Programs", s: "no cost ever", c: "#A78BFA" },
-            { n: "5", l: "Communities", s: "across SA", c: "#C4B5FD" },
-            { n: "3", l: "Trusted Partners", s: "FNB · HP · Study Trust", c: "#F59E0B" },
-          ].map((s) => (
-            <div key={s.l} className="text-center">
-              <p className="text-4xl font-black mb-1" style={{ color: s.c }}>{s.n}</p>
-              <p className="text-sm font-semibold text-white">{s.l}</p>
-              <p className="text-xs" style={{ color: "#7C3AED" }}>{s.s}</p>
+            { n: "127+", label: "Students Trained",     sub: "and growing",            c: "#ffc8dd" },
+            { n: "7",    label: "Free Programs",         sub: "no cost ever",           c: "#e7c6ff" },
+            { n: "5",    label: "Communities Reached",   sub: "across SA",              c: "#caf0f8" },
+            { n: "3",    label: "Trusted Partners",      sub: "FNB · HP · Study Trust", c: "#ffc8dd" },
+          ].map(s => (
+            <div key={s.label} className="flex flex-col items-center">
+              <p className="text-5xl font-extrabold tabular-nums" style={{ color: s.c }}>{s.n}</p>
+              <p className="text-white text-sm font-semibold mt-2">{s.label}</p>
+              <p className="text-gray-500 text-xs mt-0.5">{s.sub}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Program Cards */}
-      <section className="py-12 px-8">
-        <h2 className="text-2xl font-bold text-center mb-2 text-white">Free Programs</h2>
-        <p className="text-center text-sm mb-8" style={{ color: "#A78BFA" }}>100% free · always · no exceptions</p>
-        <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          {[
-            { title: "Introduction to Coding", tag: "8 weeks", desc: "HTML, CSS, JavaScript & Python — project-based" },
-            { title: "Cybersecurity Awareness", tag: "3 weeks", desc: "Password security, privacy protection, scam awareness" },
-            { title: "AI Fundamentals", tag: "6 weeks", desc: "Machine learning basics, AI tools, ethical AI" },
-          ].map((c) => (
-            <div key={c.title} style={{ background: "#1E1040", border: "1px solid rgba(124,58,237,0.3)" }} className="rounded-2xl p-6 hover:border-violet-500 transition-colors">
-              <div className="flex items-start justify-between mb-3">
-                <div style={{ background: "rgba(245,158,11,0.15)", color: "#F59E0B" }} className="text-xs font-bold px-2.5 py-1 rounded-full">FREE</div>
-                <span style={{ color: "#6D28D9", fontSize: "11px" }}>{c.tag}</span>
+      {/* ── Programs ── */}
+      <section className="py-14 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold mb-3">Our Programs</h2>
+            <p className="text-gray-600 text-sm max-w-xl mx-auto">Comprehensive learning pathways designed to equip youth with essential digital skills</p>
+          </div>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {[
+              { Icon: Users,  title: "Basic Computer Skills",   desc: "Essential computer fundamentals including typing, file management, and productivity software.", g: "from-[#caf0f8] to-[#e7c6ff]" },
+              { Icon: Code,   title: "Introduction to Coding",  desc: "Start your programming journey with hands-on projects in web development and programming concepts.", g: "from-[#e7c6ff] to-[#ffc8dd]" },
+              { Icon: Shield, title: "Cybersecurity Awareness", desc: "Understand digital threats and learn how to protect yourself and others in the online world.", g: "from-[#ffc8dd] to-[#caf0f8]" },
+            ].map(({ Icon, title, desc, g }) => (
+              <div key={title} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                <div className={`w-14 h-14 bg-gradient-to-br ${g} rounded-xl flex items-center justify-center mb-6`}>
+                  <Icon className="w-7 h-7 text-gray-900" />
+                </div>
+                <h3 className="text-lg font-semibold mb-3">{title}</h3>
+                <p className="text-gray-600 text-sm">{desc}</p>
               </div>
-              <h3 className="font-bold text-white mb-2">{c.title}</h3>
-              <p className="text-xs leading-relaxed" style={{ color: "#A78BFA" }}>{c.desc}</p>
-              <button style={{ background: "#25D366", color: "white" }} className="mt-4 w-full py-2 rounded-lg text-xs font-bold">
-                Apply on WhatsApp
-              </button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={{ background: "linear-gradient(135deg, #1E0B3B 0%, #2D1464 50%, #1A0F35 100%)", borderTop: "1px solid rgba(124,58,237,0.3)" }} className="py-14 px-8 text-center">
-        <h2 className="text-3xl font-black mb-3 text-white">Ready to Ignite Your Future?</h2>
-        <p className="mb-8 text-sm" style={{ color: "#A78BFA" }}>Join 127+ students already building their digital futures — for free.</p>
-        <button style={{ background: "#F59E0B", color: "#1A0F35" }} className="px-10 py-4 rounded-xl font-black text-sm hover:opacity-90 transition-opacity">
-          Get Started Today →
-        </button>
+      {/* ── CTA ── */}
+      <section className="py-14 px-6 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd]">
+        <div className="max-w-3xl mx-auto text-center">
+          <Sparkles className="w-14 h-14 mx-auto mb-5 text-gray-900" />
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Ready to Get Started?</h2>
+          <p className="text-gray-700 text-lg mb-8">Join us in bridging the digital divide and empowering the next generation of innovators.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all">Get in Touch</button>
+            <button className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 font-medium rounded-lg transition-all">Learn More</button>
+          </div>
+        </div>
       </section>
+
+      {/* ── Footer note ── */}
+      <div className="bg-gray-900 py-4 px-6 text-center">
+        <p className="text-gray-500 text-xs">© 2025 zarq · Matatiele, Eastern Cape, South Africa</p>
+      </div>
     </div>
   );
 }
