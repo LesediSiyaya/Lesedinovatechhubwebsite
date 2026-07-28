@@ -1,69 +1,68 @@
-// Option C — Sky Blue (professional, digital)
-// Accent swap: #ffc8dd → #38BDF8  |  #e7c6ff → #7DD3FC  |  #caf0f8 → #BAE6FD
-// Everything else is identical to the real site
-
+// ZARQ — all caps treatment (bold, commanding)
 import { Code, Shield, Users, Sparkles } from "lucide-react";
 
 export default function NavyOrange() {
-  const a1 = "#38BDF8"; // sky-400   (was pink #ffc8dd)
-  const a2 = "#7DD3FC"; // sky-300   (was lavender #e7c6ff)
-  const a3 = "#BAE6FD"; // sky-200   (was baby blue #caf0f8)
-
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "Inter, sans-serif" }}>
 
       {/* ── Nav ── */}
-      <nav className="bg-white border-b border-gray-100 px-6 py-4 flex items-center justify-between sticky top-0 z-10">
-        <div className="flex items-center gap-2">
-          <div style={{ background: `linear-gradient(135deg, ${a3}, ${a1})` }} className="w-7 h-7 rounded-lg flex items-center justify-center">
-            <Sparkles className="w-4 h-4 text-gray-900" />
+      <nav className="bg-white/95 backdrop-blur-sm shadow-sm px-6 py-0 sticky top-0 z-10">
+        <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-5 h-5" style={{ color: "#ffc8dd" }} />
+            <span className="font-semibold text-xl tracking-widest text-gray-900">ZARQ</span>
           </div>
-          <span className="font-bold text-gray-900 text-base tracking-tight">NovaTech Ignite</span>
+          <div className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+            {["About", "Programs", "Services", "Impact"].map(l => (
+              <span key={l} className="cursor-pointer transition-colors hover:text-[#ffc8dd]">{l}</span>
+            ))}
+          </div>
+          <button className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg">
+            Contact
+          </button>
         </div>
-        <div className="hidden md:flex items-center gap-6 text-sm text-gray-600">
-          {["Home", "About", "Programs", "Services", "Impact"].map(l => (
-            <span key={l} className="hover:text-gray-900 cursor-pointer transition-colors">{l}</span>
-          ))}
-        </div>
-        <button style={{ background: "#111827", color: "white" }} className="px-4 py-2 rounded-lg text-sm font-medium">
-          Contact
-        </button>
       </nav>
 
       {/* ── Hero ── */}
-      <section className="pt-12 pb-12 px-6 relative overflow-hidden bg-white">
+      <section className="pt-12 pb-12 px-6 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden>
-          <div style={{ background: a1, opacity: 0.12 }} className="absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl" />
-          <div style={{ background: a3, opacity: 0.12 }} className="absolute top-1/2 -left-32 w-80 h-80 rounded-full blur-3xl" />
-          <div style={{ background: a2, opacity: 0.10 }} className="absolute -bottom-16 right-1/3 w-72 h-72 rounded-full blur-3xl" />
+          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full blur-3xl" style={{ background: "#ffc8dd", opacity: 0.12 }} />
+          <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] rounded-full blur-3xl" style={{ background: "#caf0f8", opacity: 0.12 }} />
+          <div className="absolute -bottom-16 right-1/3 w-[350px] h-[350px] rounded-full blur-3xl" style={{ background: "#e7c6ff", opacity: 0.10 }} />
         </div>
+
         <div className="max-w-4xl mx-auto text-center relative">
-          <div style={{ background: `linear-gradient(to right, ${a3}, ${a2}, ${a1})` }} className="inline-block px-5 py-2 rounded-full mb-5">
+          <div className="inline-block px-5 py-2 rounded-full mb-5" style={{ background: "linear-gradient(to right, #caf0f8, #e7c6ff, #ffc8dd)" }}>
             <span className="text-xs font-medium text-gray-800">Digital Empowerment for All · South Africa</span>
           </div>
-          <h1
-            className="text-5xl md:text-7xl font-bold mb-5 bg-clip-text text-transparent px-2"
-            style={{ backgroundImage: `linear-gradient(to right, #030213, ${a2}, ${a1})` }}
-          >
-            NovaTech Ignite
+
+          {/* ZARQ — each letter gets its own colour accent, wide tracking for impact */}
+          <h1 className="text-7xl md:text-9xl font-black mb-5 leading-none tracking-widest">
+            <span style={{ color: "#111827" }}>Z</span>
+            <span style={{ color: "#caf0f8" }}>A</span>
+            <span style={{ color: "#e7c6ff" }}>R</span>
+            <span style={{ color: "#ffc8dd" }}>Q</span>
           </h1>
+
           <p className="text-xl text-gray-700 mb-4">Igniting the next generation of innovators</p>
-          <p className="text-base text-gray-600 mb-6 max-w-xl mx-auto">
+          <p className="text-base text-gray-600 mb-6 max-w-2xl mx-auto">
             Bridging the digital gap between rural and urban youth through accessible IT education, digital literacy, and emerging technologies.
           </p>
+
           <div className="flex flex-wrap gap-3 justify-center mb-10">
             {["Community-driven initiative", "Youth-focused innovation hub", "Empowering the next generation"].map(t => (
               <span key={t} className="px-4 py-2 bg-white/80 rounded-full text-xs text-gray-700 shadow-sm border border-white">{t}</span>
             ))}
           </div>
+
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button style={{ background: a1, color: "#111827" }} className="px-8 py-4 rounded-lg font-medium shadow-lg hover:opacity-90 transition-opacity">
+            <button className="px-8 py-4 rounded-lg font-medium shadow-lg hover:opacity-90 transition-opacity" style={{ background: "#ffc8dd", color: "#111827" }}>
               Join the Initiative
             </button>
-            <button className="px-8 py-4 bg-gray-900 text-white rounded-lg font-medium shadow-lg hover:bg-gray-800 transition-colors">
+            <button className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white rounded-lg font-medium shadow-lg transition-colors">
               Explore Services
             </button>
-            <button className="px-8 py-4 bg-gray-100 text-gray-900 rounded-lg font-medium hover:bg-gray-200 transition-colors">
+            <button className="px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg font-medium transition-colors">
               Support the Mission
             </button>
           </div>
@@ -75,10 +74,10 @@ export default function NavyOrange() {
         <p className="text-center text-gray-500 text-xs uppercase tracking-widest mb-10 font-medium">Our impact — growing every month</p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-3xl mx-auto">
           {[
-            { n: "127+", label: "Students Trained",    sub: "and growing",            c: a1 },
-            { n: "7",    label: "Free Programs",        sub: "no cost ever",           c: a2 },
-            { n: "5",    label: "Communities Reached",  sub: "across SA",              c: a3 },
-            { n: "3",    label: "Trusted Partners",     sub: "FNB · HP · Study Trust", c: a1 },
+            { n: "127+", label: "Students Trained",     sub: "and growing",            c: "#ffc8dd" },
+            { n: "7",    label: "Free Programs",         sub: "no cost ever",           c: "#e7c6ff" },
+            { n: "5",    label: "Communities Reached",   sub: "across SA",              c: "#caf0f8" },
+            { n: "3",    label: "Trusted Partners",      sub: "FNB · HP · Study Trust", c: "#ffc8dd" },
           ].map(s => (
             <div key={s.label} className="flex flex-col items-center">
               <p className="text-5xl font-extrabold tabular-nums" style={{ color: s.c }}>{s.n}</p>
@@ -98,12 +97,12 @@ export default function NavyOrange() {
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {[
-              { icon: Users,  title: "Basic Computer Skills",   desc: "Essential computer fundamentals including typing, file management, and productivity software.", g: [a3, a2] },
-              { icon: Code,   title: "Introduction to Coding",  desc: "Start your programming journey with hands-on projects in web development and programming concepts.", g: [a2, a1] },
-              { icon: Shield, title: "Cybersecurity Awareness", desc: "Understand digital threats and learn how to protect yourself and others in the online world.", g: [a1, a3] },
-            ].map(({ icon: Icon, title, desc, g }) => (
+              { Icon: Users,  title: "Basic Computer Skills",   desc: "Essential computer fundamentals including typing, file management, and productivity software.", g: "from-[#caf0f8] to-[#e7c6ff]" },
+              { Icon: Code,   title: "Introduction to Coding",  desc: "Start your programming journey with hands-on projects in web development and programming concepts.", g: "from-[#e7c6ff] to-[#ffc8dd]" },
+              { Icon: Shield, title: "Cybersecurity Awareness", desc: "Understand digital threats and learn how to protect yourself and others in the online world.", g: "from-[#ffc8dd] to-[#caf0f8]" },
+            ].map(({ Icon, title, desc, g }) => (
               <div key={title} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                <div style={{ background: `linear-gradient(135deg, ${g[0]}, ${g[1]})` }} className="w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <div className={`w-14 h-14 bg-gradient-to-br ${g} rounded-xl flex items-center justify-center mb-6`}>
                   <Icon className="w-7 h-7 text-gray-900" />
                 </div>
                 <h3 className="text-lg font-semibold mb-3">{title}</h3>
@@ -115,7 +114,7 @@ export default function NavyOrange() {
       </section>
 
       {/* ── CTA ── */}
-      <section style={{ background: `linear-gradient(135deg, ${a3}, ${a2}, ${a1})` }} className="py-14 px-6">
+      <section className="py-14 px-6 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd]">
         <div className="max-w-3xl mx-auto text-center">
           <Sparkles className="w-14 h-14 mx-auto mb-5 text-gray-900" />
           <h2 className="text-4xl font-bold mb-4 text-gray-900">Ready to Get Started?</h2>
@@ -126,6 +125,11 @@ export default function NavyOrange() {
           </div>
         </div>
       </section>
+
+      {/* ── Footer note ── */}
+      <div className="bg-gray-900 py-4 px-6 text-center">
+        <p className="text-gray-500 text-xs">© 2025 ZARQ · Matatiele, Eastern Cape, South Africa</p>
+      </div>
     </div>
   );
 }
