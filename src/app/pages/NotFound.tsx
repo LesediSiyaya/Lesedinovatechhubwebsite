@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { useSEO } from '../components/useSEO';
 
 export default function NotFound() {
-  useSEO({ title: 'Page Not Found', description: 'The page you are looking for does not exist. Return to the Lesedi NovaTech Hub homepage.', path: '/404' });
+  useSEO({ title: 'Page Not Found', description: 'The page you are looking for does not exist. Return to the Zarq homepage.', path: '/404' });
 
   return (
     <div className="min-h-[70vh] flex items-center justify-center px-4 py-20">
