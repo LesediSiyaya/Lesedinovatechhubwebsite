@@ -1,7 +1,7 @@
 
-  # Lesedi NovaTech Hub Website
+  # Zarq Website
 
-  This is a code bundle for Lesedi NovaTech Hub Website. The original project is available at https://www.figma.com/design/Iy4GbosxcxwoiWBw9wkkZB/Lesedi-NovaTech-Hub-Website.
+  This is a code bundle for Zarq Website. The original project is available at https://www.figma.com/design/Iy4GbosxcxwoiWBw9wkkZB/Lesedi-NovaTech-Hub-Website.
 
   ## Running the code
 
