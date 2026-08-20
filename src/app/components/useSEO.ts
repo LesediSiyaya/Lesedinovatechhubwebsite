@@ -6,7 +6,7 @@ interface SEOProps {
   path?: string;
 }
 
-const BASE_URL = 'https://lesnovatechhub.vercel.app';
+const BASE_URL = 'https://novatechhub.pages.dev';
 
 export function useSEO({ title, description, path = '/' }: SEOProps) {
   useEffect(() => {
