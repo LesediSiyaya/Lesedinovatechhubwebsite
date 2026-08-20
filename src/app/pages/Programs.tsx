@@ -124,7 +124,7 @@ export default function Programs() {
           <div className="flex-1">
             <p className="text-white font-semibold text-lg mb-1">How are these programs free?</p>
             <p className="text-gray-400 text-sm leading-relaxed">
-              NovaTech Ignite earns revenue through professional digital services — web design, branding, and tech consulting for businesses. That income funds these programs so young people in underserved communities never have to pay to learn.
+              Zarq earns revenue through professional digital services — web design, branding, and tech consulting for businesses. That income funds these programs so young people in underserved communities never have to pay to learn.
             </p>
           </div>
           <Link
