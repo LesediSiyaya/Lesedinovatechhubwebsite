@@ -10,7 +10,7 @@ const BASE_URL = 'https://lesnovatechhub.vercel.app';
 
 export function useSEO({ title, description, path = '/' }: SEOProps) {
   useEffect(() => {
-    const fullTitle = `${title} | Lesedi NovaTech Hub`;
+    const fullTitle = `${title} | Zarq`;
     const url = `${BASE_URL}${path}`;
 
     document.title = fullTitle;
