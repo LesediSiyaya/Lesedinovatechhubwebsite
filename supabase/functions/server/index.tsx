@@ -74,7 +74,7 @@ app.post("/make-server-e72b99af/contact", async (c) => {
 
     try {
       const emailPayload = {
-        from: 'Lesedi NovaTech Hub <onboarding@resend.dev>',
+        from: 'Zarq <onboarding@resend.dev>',
         to: ['l_siyaya@icloud.com'],
         subject: `New ${interest} Inquiry - ${name}`,
         html: `
