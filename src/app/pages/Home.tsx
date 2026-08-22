@@ -25,76 +25,9 @@ const testimonials = [
 ];
 
 
-// Animated counter hook — runs once when element enters viewport
-function useCounter(target: number, duration = 1800) {
-  const [count, setCount] = useState(0);
-  const [triggered, setTriggered] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  const animate = useCallback(() => {
-    const start = performance.now();
-    const tick = (now: number) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      // Ease-out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setCount(Math.round(eased * target));
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }, [target, duration]);
-
-  useEffect(() => {
-    if (triggered) return;
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setTriggered(true); animate(); observer.disconnect(); } },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [triggered, animate]);
-
-  return { count, ref };
-}
-
-const STATS = [
-  { target: 127, suffix: '+', label: 'Students Trained',     color: 'text-[#ffc8dd]', sub: 'and growing' },
-  { target: 7,   suffix: '',  label: 'Free Programs',        color: 'text-[#e7c6ff]', sub: 'no cost ever' },
-  { target: 5,   suffix: '',  label: 'Communities Reached',  color: 'text-[#caf0f8]', sub: 'across SA' },
-  { target: 3,   suffix: '',  label: 'Trusted Partners',     color: 'text-[#ffc8dd]', sub: 'FNB · HP · Study Trust' },
-];
-
-
-function StatCard({ target, suffix, label, color, sub }: typeof STATS[0]) {
-  const { count, ref } = useCounter(target);
-  return (
-    <div ref={ref} className="flex flex-col items-center">
-      <p className={`text-4xl sm:text-5xl font-extrabold tabular-nums ${color}`}>
-        {count}{suffix}
-      </p>
-      <p className="text-white text-sm sm:text-base font-semibold mt-2">{label}</p>
-      <p className="text-gray-500 text-xs mt-0.5">{sub}</p>
-    </div>
-  );
-}
-
-function AnimatedStatsSection() {
-  return (
-    <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-900">
-      <div className="max-w-5xl mx-auto">
-        <p className="text-center text-gray-500 text-xs uppercase tracking-widest mb-10 font-medium">Our impact — growing every month</p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-4">
-          {STATS.map((s) => <StatCard key={s.label} {...s} />)}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
-  useSEO({ title: 'Digital Education & Tech Services for South African Youth', description: `Zarq empowers rural youth in South Africa with free IT programs, coding, cybersecurity training, and professional digital services. Join us and shape your digital future.`, path: '/' });
+  useSEO({ title: 'Technology & Innovation', description: 'Zarq builds practical digital solutions, creates opportunities to learn technology, and explores emerging technologies through hands-on experimentation.', path: '/' });
 
   return (
     <div>
@@ -198,7 +131,7 @@ export default function Home() {
 
 
       {/* Impact Stats — animated counters */}
-      <AnimatedStatsSection />
+      <div className="max-w-2xl mx-auto text-center"><p className="text-white/75 text-base sm:text-lg">Our work is grounded in access, practical learning and real-world participation in technology.</p></div>
 
       {/* Meet the Founder */}
       <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
