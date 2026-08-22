@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+const BASE_URL = 'https://novatechhub.pages.dev';
+
 interface SEOProps {
   title: string;
   description: string;
@@ -8,6 +10,7 @@ interface SEOProps {
 
 export function useSEO({ title, description, path = '/' }: SEOProps) {
   useEffect(() => {
+    const url = `${BASE_URL}${path}`;
     const fullTitle = `${title} | Zarq`;
     document.title = fullTitle;
 
@@ -17,8 +20,10 @@ export function useSEO({ title, description, path = '/' }: SEOProps) {
     };
 
     setMeta('meta[name="description"]', description);
+    setMeta('link[rel="canonical"]', url);
     setMeta('meta[property="og:title"]', fullTitle);
     setMeta('meta[property="og:description"]', description);
+    setMeta('meta[property="og:url"]', url);
     setMeta('meta[name="twitter:title"]', fullTitle);
     setMeta('meta[name="twitter:description"]', description);
   }, [title, description, path]);
