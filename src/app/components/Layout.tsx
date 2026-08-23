@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
-import { Sparkles, Menu, X, Instagram, ChevronUp, CalendarDays } from 'lucide-react';
+import { Menu, X, Instagram, ChevronUp, CalendarDays } from 'lucide-react';
 
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,8 +83,7 @@ export default function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#ffc8dd]" />
-              <span className="font-semibold text-lg sm:text-xl">Zarq</span>
+              <span className="font-brand text-2xl sm:text-3xl tracking-tight text-gray-900">ZARQ</span>
             </Link>
 
             {/* Desktop Menu */}
@@ -157,8 +156,7 @@ export default function Layout() {
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-6 h-6 text-[#ffc8dd]" />
-                <span className="font-semibold text-lg">Zarq</span>
+                <span className="font-brand text-2xl tracking-tight text-white">ZARQ</span>
               </div>
               <p className="text-gray-400 text-sm">
                 Empowering rural youth through technology education and digital literacy.
