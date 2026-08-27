@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://novatechhub.pages.dev/sitemap.xml
+Sitemap: https://zarq.sa-tech.workers.dev/sitemap.xml
