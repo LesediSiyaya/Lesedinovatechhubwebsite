@@ -193,3 +193,15 @@
     line-height: 1.5;
   }
 }
+
+
+@layer utilities {
+  .font-brand {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-weight: 400;
+  }
+
+  .font-spec {
+    font-family: 'Geist Mono', 'SFMono-Regular', Consolas, monospace;
+  }
+}
