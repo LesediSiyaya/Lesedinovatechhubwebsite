@@ -1,349 +1,76 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router';
-import { Code, Shield, Cpu, Users, Sparkles, Quote } from 'lucide-react';
+import { ArrowRight, Code, Cpu, Lightbulb, Shield, Target, Users } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 
-const testimonials = [
-  {
-    quote:
-      'Zarq creates an inspiring environment for young people to learn and grow through technology. Initiatives like this are important for bridging the digital gap in our communities and preparing youth for future opportunities.',
-    name: 'Community Supporter',
-    color: 'from-[#caf0f8] to-[#e7c6ff]',
-  },
-  {
-    quote:
-      'What stands out about Zarq is its vision to make technology education more accessible to rural youth. The focus on coding, AI, and digital skills has the potential to positively impact many young lives.',
-    name: 'Local Youth Advocate',
-    color: 'from-[#e7c6ff] to-[#ffc8dd]',
-  },
-  {
-    quote:
-      'Seeing a youth-led initiative focused on innovation and community empowerment is truly motivating. Zarq represents the kind of forward-thinking solutions needed to help young people succeed in a digital world.',
-    name: 'Education & Community Member',
-    color: 'from-[#ffc8dd] to-[#caf0f8]',
-  },
+const coreAreas = [
+  { label: 'Technology', title: 'Digital Solutions', description: 'We build websites, software and digital experiences designed around real needs.', icon: Code, color: 'bg-[#ffc8dd]' },
+  { label: 'Access', title: 'Technology Access', description: 'We create pathways to technology, digital tools and practical learning.', icon: Users, color: 'bg-[#e7c6ff]' },
+  { label: 'Skills', title: 'STEM & Robotics', description: 'We introduce learners and communities to coding, robotics, AI and emerging technologies.', icon: Cpu, color: 'bg-[#caf0f8]' },
 ];
 
+const buildCategories = [
+  { title: 'Web & Digital', description: 'Websites, digital platforms and online experiences built for people and organisations.', icon: Code, color: 'bg-[#ffc8dd]' },
+  { title: 'Software & Solutions', description: 'Technology solutions designed around specific operational and business needs.', icon: Shield, color: 'bg-[#e7c6ff]' },
+  { title: 'Digital Strategy', description: 'Helping organisations identify where technology can improve the way they work, connect and grow.', icon: Target, color: 'bg-[#caf0f8]' },
+  { title: 'IT & Technology Support', description: 'Practical technical support, implementation and technology guidance.', icon: Lightbulb, color: 'bg-[#ffc8dd]' },
+];
 
+const audiences = [
+  ['Businesses', 'Digital solutions, technology services and support to help your organisation grow.'],
+  ['Organisations', 'Practical technology solutions that improve how you operate and connect with the people you serve.'],
+  ['Learners', 'Opportunities to develop digital, coding, robotics and STEM skills.'],
+  ['Communities', 'Greater access to technology, learning and digital opportunities.'],
+];
 
 export default function Home() {
-  useSEO({ title: 'Technology & Innovation', description: 'Zarq builds practical digital solutions, creates opportunities to learn technology, and explores emerging technologies through hands-on experimentation.', path: '/' });
+  useSEO({ title: 'Technology & Innovation', description: 'Zarq builds practical digital solutions, creates access to technology and develops digital skills through learning and STEM opportunities.', path: '/' });
 
   return (
     <div>
-      {/* Hero Section */}
-      <section className="pt-12 pb-12 sm:pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Soft background glow */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-[#ffc8dd] rounded-full opacity-[0.12] blur-3xl" />
-          <div className="absolute top-1/2 -left-32 w-[400px] h-[400px] bg-[#caf0f8] rounded-full opacity-[0.12] blur-3xl" />
-          <div className="absolute -bottom-16 right-1/3 w-[350px] h-[350px] bg-[#e7c6ff] rounded-full opacity-[0.10] blur-3xl" />
-        </div>
-
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block px-4 sm:px-6 py-2 bg-gradient-to-r from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-full mb-4 sm:mb-6">
-              <span className="text-xs sm:text-sm font-medium">Digital Empowerment for All · South Africa</span>
+      <section className="pt-28 pb-16 sm:pt-36 sm:pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[min(680px,90vw)] h-[280px] rounded-full bg-gradient-to-r from-[#caf0f8]/40 via-[#e7c6ff]/30 to-[#ffc8dd]/40 blur-3xl pointer-events-none" />
+        <div className="relative max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+          <div>
+            <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] text-gray-500 uppercase mb-6">Technology · Access · Skills</p>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.94] font-normal mb-6 text-gray-950">Technology built for what comes next.</h1>
+            <p className="text-lg sm:text-xl text-gray-700 max-w-2xl leading-relaxed mb-8">Zarq builds practical digital solutions and creates access to technology, digital skills and STEM opportunities for businesses, organisations and communities.</p>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link to="/digital" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors">Explore Services <ArrowRight className="w-4 h-4" /></Link>
+              <Link to="/about" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-colors">Discover Zarq <ArrowRight className="w-4 h-4" /></Link>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-[#030213] via-[#e7c6ff] to-[#ffc8dd] bg-clip-text text-transparent px-2">
-              Zarq
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-gray-700 mb-4 sm:mb-8 px-2">
-              Igniting the next generation of innovators
-            </p>
-            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto px-2">
-              Bridging the digital gap between rural and urban youth through accessible IT education, digital literacy, and emerging technologies.
-            </p>
-            <div className="flex flex-wrap gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-2">
-              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm border border-white">Community-driven initiative</span>
-              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm border border-white">Youth-focused innovation hub</span>
-              <span className="px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full text-xs sm:text-sm text-gray-700 shadow-sm border border-white">Empowering the next generation</span>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-              <Link
-                to="/programs"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation shadow-lg hover:shadow-xl text-center"
-              >
-                Join the Initiative
-              </Link>
-              <Link
-                to="/services"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation shadow-lg hover:shadow-xl text-center"
-              >
-                Explore Services
-              </Link>
-              <Link
-                to="/impact"
-                className="px-6 sm:px-8 py-3 sm:py-4 bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium rounded-lg transition-all touch-manipulation text-center"
-              >
-                Support the Mission
-              </Link>
-            </div>
+          </div>
+          <div className="relative min-h-[280px] sm:min-h-[360px] bg-gray-900 rounded-[2rem] p-7 sm:p-10 flex flex-col justify-between overflow-hidden">
+            <div className="absolute -right-16 -top-16 w-48 h-48 rounded-full border border-white/10" /><div className="absolute -right-5 -top-5 w-28 h-28 rounded-full border border-[#ffc8dd]/40" />
+            <div className="relative flex items-center justify-between text-xs uppercase tracking-[0.18em] text-gray-400"><span>Zarq</span><span>01 / 04</span></div>
+            <div className="relative"><p className="font-brand text-7xl sm:text-8xl italic text-white leading-none mb-4">Q</p><p className="text-white text-lg sm:text-xl max-w-xs">Practical technology. Wider opportunity.</p></div>
+            <p className="relative font-mono text-[10px] sm:text-xs text-gray-400 uppercase tracking-wide">BUILD · LEARN · EXPLORE</p>
           </div>
         </div>
       </section>
 
-      {/* Trust Bar */}
-      <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-center text-xs font-semibold tracking-widest text-gray-400 uppercase mb-6">Recognised &amp; Supported By</p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-[#caf0f8] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-800">Study Trust</p>
-                <p className="text-xs text-gray-500">Certificate of Mentorship</p>
-              </div>
-            </div>
-            <div className="sm:hidden w-full h-px bg-gray-200 my-1" />
-            <div className="hidden sm:block w-px h-10 bg-gray-200" />
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-[#e7c6ff] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-800">First National Bank</p>
-                <p className="text-xs text-gray-500">Certificate of Service</p>
-              </div>
-            </div>
-            <div className="sm:hidden w-full h-px bg-gray-200 my-1" />
-            <div className="hidden sm:block w-px h-10 bg-gray-200" />
-            <div className="flex items-center gap-3">
-              <div className="w-9 h-9 bg-[#ffc8dd] rounded-full flex items-center justify-center flex-shrink-0">
-                <svg className="w-4 h-4 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0-3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-gray-800">HP Trust</p>
-                <p className="text-xs text-gray-500">Academic Sponsor · BSc IT</p>
-              </div>
-            </div>
-          </div>
+      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-y border-gray-100">
+        <div className="max-w-6xl mx-auto"><div className="max-w-2xl mb-10 sm:mb-14"><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">The Zarq foundation</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-4">Technology. Access. Skills.</h2><p className="text-gray-600 text-base sm:text-lg leading-relaxed">Zarq has multiple sides, but one underlying purpose: making technology useful, understandable and more open to participation.</p></div>
+          <div className="grid md:grid-cols-3 gap-5">{coreAreas.map(({ label, title, description, icon: Icon, color }) => <div key={title} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100"><div className={"w-12 h-12 rounded-xl flex items-center justify-center mb-7 text-gray-900 " + color}><Icon className="w-6 h-6" /></div><p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">{label}</p><h3 className="text-2xl mb-3 text-gray-950">{title}</h3><p className="text-gray-600 leading-relaxed">{description}</p></div>)}</div>
         </div>
       </section>
 
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white"><div className="max-w-5xl mx-auto grid md:grid-cols-[0.8fr_1.2fr] gap-10 sm:gap-16 items-start"><p className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-400 pt-2">Why Zarq</p><div><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-6">Technology should create opportunity.</h2><p className="text-lg text-gray-600 leading-relaxed mb-5">At Zarq, we believe technology is most valuable when it solves real problems and opens access to new possibilities.</p><p className="text-lg text-gray-600 leading-relaxed mb-8">We combine digital services with technology education and STEM initiatives to build practical solutions, develop skills and make technology more accessible.</p><Link to="/about" className="inline-flex items-center gap-2 font-semibold text-gray-900 hover:text-gray-600 transition-colors">Learn About Zarq <ArrowRight className="w-4 h-4" /></Link></div></div></section>
 
-      {/* Impact Stats — animated counters */}
-      <div className="max-w-2xl mx-auto text-center"><p className="text-white/75 text-base sm:text-lg">Our work is grounded in access, practical learning and real-world participation in technology.</p></div>
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white"><div className="max-w-6xl mx-auto"><div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-14"><div className="max-w-2xl"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">Zarq Digital</p><h2 className="text-4xl sm:text-5xl leading-tight mb-4">What we build</h2><p className="text-gray-300 text-base sm:text-lg leading-relaxed">From digital experiences to technology solutions, Zarq helps turn ideas and challenges into practical technology.</p></div><Link to="/digital" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#ffc8dd] transition-colors shrink-0">View All Services <ArrowRight className="w-4 h-4" /></Link></div><div className="grid sm:grid-cols-2 gap-px bg-white/15 rounded-2xl overflow-hidden">{buildCategories.map(({ title, description, icon: Icon, color }) => <div key={title} className="bg-gray-900 p-6 sm:p-8 hover:bg-gray-800 transition-colors"><div className={"w-11 h-11 rounded-xl flex items-center justify-center mb-6 text-gray-900 " + color}><Icon className="w-5 h-5" /></div><h3 className="text-2xl mb-2">{title}</h3><p className="text-gray-400 leading-relaxed">{description}</p></div>)}</div></div></section>
 
-      {/* Meet the Founder */}
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-10 sm:gap-16">
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#e7c6ff]/25"><div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 sm:gap-16 items-center"><div><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">Zarq Hub · Learn</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-5">Technology should be accessible.</h2><p className="text-gray-700 text-lg leading-relaxed mb-8">Zarq Hub creates opportunities for people to develop practical digital skills, explore technology and access learning resources.</p><Link to="/hub" className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-700 transition-colors">Explore Zarq Hub <ArrowRight className="w-4 h-4" /></Link></div><div className="grid sm:grid-cols-3 gap-4">{[['Digital Skills','Building confidence with essential digital tools and technologies.'],['Learning','Practical technology education for different levels of experience.'],['Community','Creating spaces where people can learn, experiment and connect through technology.']].map(([title, description]) => <div key={title} className="bg-white/80 rounded-2xl p-5 border border-white"><h3 className="text-xl mb-3">{title}</h3><p className="text-gray-600 text-sm leading-relaxed">{description}</p></div>)}</div></div></section>
 
-            {/* Photo */}
-            <div className="flex-shrink-0">
-              <div className="relative">
-                <div className="absolute -inset-3 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-3xl opacity-60 blur-sm" />
-                <img
-                  src="/founder.jpg"
-                  alt="Lesedi Siyaya, Founder of Zarq"
-                  loading="lazy"
-                  className="relative w-48 h-48 sm:w-60 sm:h-60 object-cover rounded-2xl shadow-xl"
-                />
-              </div>
-            </div>
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#caf0f8]/30"><div className="max-w-6xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-10 sm:gap-16 items-center"><div className="order-2 lg:order-1 bg-white/75 rounded-[2rem] p-7 sm:p-10 border border-white"><p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-6">Emerging initiative / 03</p><div className="grid grid-cols-2 gap-4">{['Robotics','Coding','Automation','STEM projects'].map((item, index) => <div key={item} className="rounded-xl p-4 bg-white border border-gray-100"><span className="font-mono text-[10px] text-gray-400">0{index + 1}</span><p className="font-semibold text-gray-900 mt-3">{item}</p></div>)}</div></div><div className="order-1 lg:order-2"><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">Zarq Robotics · Explore</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-5">From learning technology to building with it.</h2><p className="text-gray-700 text-lg leading-relaxed mb-4">Zarq Robotics introduces learners to robotics, coding, automation and emerging technologies through practical, hands-on experiences.</p><p className="text-gray-600 leading-relaxed mb-8">Zarq Robotics is an emerging area of the ecosystem. We are developing the ideas, projects and learning experiences that will shape this initiative.</p><Link to="/robotics" className="inline-flex items-center gap-2 font-semibold text-gray-900 hover:text-gray-600 transition-colors">Explore Zarq Robotics <ArrowRight className="w-4 h-4" /></Link></div></div></section>
 
-            {/* Quote + bio */}
-            <div className="flex-1 text-center md:text-left">
-              <div className="inline-block px-4 py-1.5 bg-gradient-to-r from-[#caf0f8] to-[#e7c6ff] rounded-full text-xs font-semibold text-gray-700 uppercase tracking-widest mb-5">
-                Meet the Founder
-              </div>
-              <blockquote className="text-xl sm:text-2xl font-semibold text-gray-900 leading-snug mb-6">
-                <span className="text-[#ffc8dd] text-4xl font-serif leading-none mr-1">"</span>
-                My purpose isn't just to succeed — it's to create opportunities, inspire others through my actions, and leave every place better than I found it.
-                <span className="text-[#ffc8dd] text-4xl font-serif leading-none ml-1">"</span>
-              </blockquote>
-              <div className="flex items-center gap-3 justify-center md:justify-start">
-                <div className="w-8 h-px bg-[#ffc8dd]" />
-                <div>
-                  <p className="font-bold text-gray-900 text-sm">Lesedi Siyaya</p>
-                  <p className="text-xs text-gray-500">Founder · Zarq</p>
-                </div>
-              </div>
-              <div className="mt-6">
-                <Link
-                  to="/about"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 underline underline-offset-4 decoration-[#ffc8dd] hover:decoration-2 transition-all"
-                >
-                  Read Lesedi's full story →
-                </Link>
-              </div>
-            </div>
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white"><div className="max-w-6xl mx-auto"><div className="max-w-2xl mb-10 sm:mb-14"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">The Zarq ecosystem</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-4">One ecosystem. Different pathways.</h2><p className="text-gray-600 text-lg leading-relaxed">Zarq brings technology, digital services and learning together under one ecosystem.</p></div><div className="grid md:grid-cols-3 gap-5 mb-8">{[['Zarq Digital','Building practical technology for businesses and organisations.','BUILD','bg-[#ffc8dd]','/digital'],['Zarq Hub','Creating access to digital learning and technology skills.','LEARN','bg-[#e7c6ff]','/hub'],['Zarq Robotics','Developing practical STEM, robotics and emerging technology experiences.','EXPLORE','bg-[#caf0f8]','/robotics']].map(([title, description, action, color, path]) => <Link to={path} key={title} className="group rounded-2xl border border-gray-200 p-6 hover:border-gray-400 transition-colors"><div className={"inline-flex px-3 py-1 rounded-full font-mono text-xs text-gray-800 mb-6 " + color}>{action}</div><h3 className="text-2xl mb-2">{title}</h3><p className="text-gray-600 leading-relaxed">{description}</p><ArrowRight className="w-4 h-4 mt-6 group-hover:translate-x-1 transition-transform" /></Link>)}</div><p className="text-center text-gray-600 max-w-3xl mx-auto leading-relaxed">Together, these areas reflect one belief: technology should be useful, accessible and capable of creating opportunity.</p></div></section>
 
-          </div>
-        </div>
-      </section>
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"><div className="max-w-6xl mx-auto"><div className="max-w-2xl mb-10 sm:mb-14"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">Who Zarq is for</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-4">Built for different needs.</h2><p className="text-gray-600 text-lg leading-relaxed">Whether you need a digital solution, want to develop technology skills or are looking for new ways to engage with STEM, Zarq creates pathways into technology.</p></div><div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">{audiences.map(([title, description]) => <div key={title} className="bg-white rounded-2xl p-6 border border-gray-100"><h3 className="text-2xl mb-3">{title}</h3><p className="text-gray-600 text-sm leading-relaxed">{description}</p></div>)}</div></div></section>
 
-      {/* Quick Overview - Programs */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Our Programs</h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-              Comprehensive learning pathways designed to equip youth with essential digital skills
-            </p>
-          </div>
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white"><div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 sm:gap-16"><div className="flex-shrink-0"><div className="relative"><div className="absolute -inset-3 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-3xl opacity-60 blur-sm" /><img src="/founder.jpg" alt="Lesedi Siyaya, Founder of Zarq" loading="lazy" className="relative w-48 h-48 sm:w-60 sm:h-60 object-cover rounded-2xl shadow-xl" /></div></div><div className="flex-1 text-center md:text-left"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-5">The person behind Zarq</p><blockquote className="text-2xl sm:text-3xl font-normal text-gray-900 leading-snug mb-6">“Technology, learning and practical innovation should meet in ways that create real opportunity.”</blockquote><p className="text-gray-600 leading-relaxed mb-5">Founded by Lesedi Siyaya, Zarq is being built around a broader vision: creating a platform where technology, learning and practical innovation can meet.</p><p className="font-semibold text-gray-900">Lesedi Siyaya</p><p className="text-sm text-gray-500 mb-6">Founder · Zarq</p><Link to="/about" className="inline-flex items-center gap-2 font-semibold text-gray-900 hover:text-gray-600 transition-colors">About Zarq <ArrowRight className="w-4 h-4" /></Link></div></div></section>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#caf0f8] to-[#e7c6ff] rounded-xl flex items-center justify-center mb-6">
-                <Users className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Basic Computer Skills</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Learn essential computer fundamentals including typing, file management, and productivity software.
-              </p>
-            </div>
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white"><div className="max-w-5xl mx-auto grid md:grid-cols-[0.75fr_1.25fr] gap-10 sm:gap-16 items-start"><div><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">Our impact</p><h2 className="text-4xl sm:text-5xl leading-tight">Technology with a wider purpose.</h2></div><div><p className="text-xl text-gray-200 leading-relaxed mb-5">We don’t measure technology only by what we build, but by what it makes possible.</p><p className="text-gray-400 leading-relaxed mb-8">Through digital services, skills development and STEM initiatives, Zarq works toward a future where more people can access technology, understand it and use it to create new opportunities.</p><Link to="/impact" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#ffc8dd] transition-colors">Explore our impact <ArrowRight className="w-4 h-4" /></Link></div></div></section>
 
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#e7c6ff] to-[#ffc8dd] rounded-xl flex items-center justify-center mb-6">
-                <Code className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Introduction to Coding</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Start your programming journey with hands-on projects in web development and programming concepts.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#ffc8dd] to-[#caf0f8] rounded-xl flex items-center justify-center mb-6">
-                <Shield className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Cybersecurity Awareness</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Understand digital threats and learn how to protect yourself and others in the online world.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Link
-              to="/programs"
-              className="inline-block px-8 py-3 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all"
-            >
-              View All Programs
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Overview - Services */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">Professional Services</h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-              Expert digital solutions for individuals and businesses ready to elevate their online presence
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#caf0f8] to-[#e7c6ff] rounded-xl flex items-center justify-center mb-6">
-                <Code className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">Website Design & Development</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Modern, responsive websites built with the latest technologies.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#e7c6ff] to-[#ffc8dd] rounded-xl flex items-center justify-center mb-6">
-                <Sparkles className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">UI/UX Design Services</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                User-centered design that creates intuitive and engaging digital experiences.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#ffc8dd] to-[#caf0f8] rounded-xl flex items-center justify-center mb-6">
-                <Cpu className="w-7 h-7 text-gray-900" />
-              </div>
-              <h3 className="text-xl font-semibold mb-3">AI & Automation Solutions</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                Leverage artificial intelligence and automation to enhance productivity.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center">
-            <Link
-              to="/services"
-              className="inline-block px-8 py-3 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all"
-            >
-              Explore All Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4">What People Are Saying</h2>
-            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto">
-              Voices from the community that inspire us to keep going
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {testimonials.map(({ quote, name, color }) => (
-              <div
-                key={name}
-                className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow flex flex-col"
-              >
-                <div className={`w-10 h-10 bg-gradient-to-br ${color} rounded-xl flex items-center justify-center mb-5 flex-shrink-0`}>
-                  <Quote className="w-5 h-5 text-gray-700" />
-                </div>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed flex-1 mb-6 italic">
-                  "{quote}"
-                </p>
-                <div className="flex items-center gap-3 mt-auto">
-                  <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${color} flex-shrink-0`} />
-                  <span className="text-sm font-semibold text-gray-800">— {name}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd]">
-        <div className="max-w-4xl mx-auto text-center">
-          <Sparkles className="w-16 h-16 mx-auto mb-6 text-gray-900" />
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-gray-700 text-lg mb-8">
-            Join us in bridging the digital divide and empowering the next generation of innovators.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/contact"
-              className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation text-center"
-            >
-              Get in Touch
-            </Link>
-            <Link
-              to="/about"
-              className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 font-medium rounded-lg transition-all touch-manipulation text-center"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-      </section>
+      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd]"><div className="max-w-4xl mx-auto text-center"><p className="text-xs font-semibold tracking-[0.2em] text-gray-600 uppercase mb-5">Start somewhere useful</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-5">Have an idea, challenge or opportunity?</h2><p className="text-gray-700 text-lg sm:text-xl mb-9">Let’s explore what technology can make possible.</p><div className="flex flex-col sm:flex-row justify-center gap-3"><Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors">Start a Conversation <ArrowRight className="w-4 h-4" /></Link><Link to="/digital" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/70 text-gray-900 font-semibold rounded-full hover:bg-white transition-colors">Explore Services</Link></div></div></section>
     </div>
   );
 }
