@@ -29,8 +29,8 @@ export default function Home() {
     <div>
       <section className="pt-28 pb-16 sm:pt-36 sm:pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[min(680px,90vw)] h-[280px] rounded-full bg-gradient-to-r from-[#caf0f8]/40 via-[#e7c6ff]/30 to-[#ffc8dd]/40 blur-3xl pointer-events-none" />
-        <div className="relative max-w-6xl mx-auto grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-          <div>
+        <div className="relative max-w-5xl mx-auto">
+          <div className="max-w-4xl">
             <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] text-gray-500 uppercase mb-6">Technology · Access · Skills</p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.94] font-normal mb-6 text-gray-950">Technology built for what comes next.</h1>
             <p className="text-lg sm:text-xl text-gray-700 max-w-2xl leading-relaxed mb-8">Zarq builds practical digital solutions and creates access to technology, digital skills and STEM opportunities for businesses, organisations and communities.</p>
@@ -39,12 +39,7 @@ export default function Home() {
               <Link to="/about" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-colors">Discover Zarq <ArrowRight className="w-4 h-4" /></Link>
             </div>
           </div>
-          <div className="relative min-h-[280px] sm:min-h-[360px] bg-gray-900 rounded-[2rem] p-7 sm:p-10 flex flex-col justify-between overflow-hidden">
-            <div className="absolute -right-16 -top-16 w-48 h-48 rounded-full border border-white/10" /><div className="absolute -right-5 -top-5 w-28 h-28 rounded-full border border-[#ffc8dd]/40" />
-            <div className="relative flex items-center justify-between text-xs uppercase tracking-[0.18em] text-gray-400"><span>Zarq</span><span>01 / 04</span></div>
-            <div className="relative"><p className="font-brand text-7xl sm:text-8xl italic text-white leading-none mb-4">Q</p><p className="text-white text-lg sm:text-xl max-w-xs">Practical technology. Wider opportunity.</p></div>
-            <p className="relative font-mono text-[10px] sm:text-xs text-gray-400 uppercase tracking-wide">BUILD · LEARN · EXPLORE</p>
-          </div>
+
         </div>
       </section>
 
