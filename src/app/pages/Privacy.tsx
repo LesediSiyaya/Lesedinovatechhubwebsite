@@ -22,7 +22,7 @@ export default function Privacy() {
             <p className="text-gray-600 leading-relaxed">
               Zarq ("we", "our", or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, and safeguard the information you
-              provide when you visit our website (<a href="https://zarq.sa-tech.workers.dev" className="text-[#e7c6ff] underline">novatechhub.pages.dev</a>) or
+              provide when you visit our website (<a href="https://zarq.sa-tech.workers.dev" className="text-[#e7c6ff] underline">zarq.sa-tech.workers.dev</a>) or
               contact us about our services and programs.
             </p>
           </div>

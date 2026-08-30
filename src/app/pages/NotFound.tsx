@@ -32,8 +32,8 @@ export default function NotFound() {
         </div>
         <div className="mt-10 flex flex-wrap gap-3 justify-center text-sm">
           {[
-            { to: '/programs', label: 'Programs' },
-            { to: '/services', label: 'Services' },
+            { to: '/hub', label: 'ZARQ Hub' },
+            { to: '/digital', label: 'ZARQ Digital' },
             { to: '/about',    label: 'About' },
             { to: '/faq',      label: 'FAQ' },
           ].map(({ to, label }) => (

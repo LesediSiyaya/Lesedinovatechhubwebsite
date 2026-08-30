@@ -242,7 +242,7 @@ export default function Impact() {
               Get Involved
             </Link>
             <Link
-              to="/programs"
+              to="/hub"
               className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all touch-manipulation text-center"
             >
               View Programs

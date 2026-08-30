@@ -103,6 +103,9 @@ export default function About() {
                 <p className="text-xs font-semibold tracking-widest text-[#c77dff] uppercase mb-2">Meet Our Founder</p>
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">Lesedi Siyaya</h3>
                 <p className="text-sm font-medium text-gray-500 mb-6">Founder &amp; Director, Zarq</p>
+                <blockquote className="border-l-4 border-[#ffc8dd] pl-4 mb-6 text-lg sm:text-xl font-medium text-gray-900 leading-snug">
+                  “My purpose isn’t just to succeed — it’s to create opportunities, inspire others, and leave every place better than I found it.”
+                </blockquote>
                 <p className="text-gray-700 mb-4 leading-relaxed">
                   Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
                 </p>
@@ -137,7 +140,7 @@ export default function About() {
               <p className="text-gray-400 text-sm leading-relaxed mb-5">
                 Coding, cybersecurity, AI, digital literacy, mentorship — all free. No registration fees, no hidden costs. Open to any young person who wants to learn, regardless of where they come from.
               </p>
-              <Link to="/programs" className="text-[#caf0f8] text-sm font-medium hover:underline">
+              <Link to="/hub" className="text-[#caf0f8] text-sm font-medium hover:underline">
                 Explore free programs →
               </Link>
             </div>
@@ -150,7 +153,7 @@ export default function About() {
               <p className="text-gray-400 text-sm leading-relaxed mb-5">
                 Web design, branding, AI solutions, cybersecurity, and digital strategy — at affordable rates. Revenue from these services directly sustains our free community programs.
               </p>
-              <Link to="/services" className="text-[#ffc8dd] text-sm font-medium hover:underline">
+              <Link to="/digital" className="text-[#ffc8dd] text-sm font-medium hover:underline">
                 View our services →
               </Link>
             </div>
@@ -217,7 +220,7 @@ export default function About() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/programs"
+              to="/hub"
               className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation text-center"
             >
               Explore Programs
