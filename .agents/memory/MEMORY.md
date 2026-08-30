@@ -1,1 +1,2 @@
 - [ZARQ brand identity](zarq-brand-identity.md) — use the supplied ZARQ guide as the visual source of truth for future website updates.
+- [GitHub publishing](github-publishing.md) — the attached connector reads repositories, but write requests are blocked; use a valid secure Git remote credential for pushes.
